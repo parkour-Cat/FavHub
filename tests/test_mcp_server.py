@@ -871,7 +871,8 @@ def test_tools_list_includes_sync_tools_with_closed_schemas(
         "x",
         "zhihu",
     ]
-    assert schemas["favhub.sync_start"]["required"] == ["platform", "mode"]
+    # mode is optional and defaults to incremental, matching favhub.github_sync.
+    assert schemas["favhub.sync_start"]["required"] == ["platform"]
     assert schemas["favhub.sync_submit_batch"]["required"] == [
         "jobId",
         "platform",
@@ -886,6 +887,35 @@ def test_tools_list_includes_sync_tools_with_closed_schemas(
         "maxScanReached",
     ]
     assert schemas["favhub.sync_status"]["required"] == ["jobId"]
+
+
+def test_every_tool_taking_a_mode_treats_it_the_same_way() -> None:
+    """One argument, one contract, across all three entry points.
+
+    `favhub.github_sync` defaulted to incremental while the two start tools
+    required the argument, so the same word meant "optional" or "mandatory"
+    depending on which tool an Agent reached for. Asserting the three together
+    is what keeps a fourth from inventing a third answer.
+    """
+    declared = (
+        mcp_module._TOOLS
+        + mcp_module._SYNC_TOOLS
+        + mcp_module._BROWSER_TOOLS
+        + mcp_module._GITHUB_TOOLS
+        + mcp_module._ENRICH_TOOLS
+    )
+    schemas = {tool["name"]: tool["inputSchema"] for tool in declared}
+    with_mode = sorted(name for name, schema in schemas.items() if "mode" in schema["properties"])
+    assert with_mode == [
+        "favhub.browser_start",
+        "favhub.github_sync",
+        "favhub.sync_start",
+    ]
+    for name in with_mode:
+        schema = schemas[name]
+        assert "mode" not in schema["required"], name
+        assert schema["properties"]["mode"]["enum"] == ["full", "incremental"], name
+        assert "Defaults to incremental" in schema["properties"]["mode"]["description"], name
 
 
 def test_sync_tools_are_unknown_without_gateway() -> None:
@@ -1381,7 +1411,7 @@ def test_browser_tools_advertise_exact_closed_schemas(tmp_path: Path) -> None:
         ]
         schemas = {tool["name"]: tool["inputSchema"] for tool in tools}
         assert all(schema["additionalProperties"] is False for schema in schemas.values())
-        assert schemas["favhub.browser_start"]["required"] == ["platform", "mode"]
+        assert schemas["favhub.browser_start"]["required"] == ["platform"]
         assert schemas["favhub.browser_start"]["properties"]["platform"]["enum"] == [
             "bilibili",
             "x",

@@ -99,7 +99,14 @@ class SyncGateway:
 
     def start(self, arguments: Mapping[str, Any]) -> dict[str, Any]:
         platform = _required_platform(arguments)
-        mode = _required_string(arguments, "mode")
+        # Absent means incremental, which is what `favhub.github_sync` and the
+        # CLI already did. Requiring it here bought nothing: there is no reading
+        # of "start a sync" that wants full more often, and the two defensible
+        # answers are not symmetric. Incremental on a platform with no frontier
+        # scans to the end exactly like full, and it never rewrites an item
+        # already stored — so guessing incremental costs a caller who meant full
+        # a re-run, while guessing full could overwrite a library.
+        mode = arguments.get("mode", SyncMode.INCREMENTAL.value)
         if mode not in {SyncMode.FULL.value, SyncMode.INCREMENTAL.value}:
             raise SyncArgumentError("mode must be 'full' or 'incremental'")
         published_since = _optional_aware_datetime(arguments, "publishedSince")

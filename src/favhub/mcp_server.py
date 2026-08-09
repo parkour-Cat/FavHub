@@ -110,6 +110,14 @@ _TOOL_ERROR_MESSAGES = {
     "index_unavailable": "FavHub index is unavailable.",
 }
 
+# One wording for every tool that takes a mode, so the three cannot drift into
+# describing the same argument differently.
+_MODE_DESCRIPTION = (
+    "Defaults to incremental. Use full only to refresh items already stored, or "
+    "to reach history behind the frontier; a first run does not need it, because "
+    "with no frontier yet incremental already scans to the end."
+)
+
 _TOOLS: tuple[dict[str, Any], ...] = (
     {
         "name": "favhub.search",
@@ -197,7 +205,11 @@ _SYNC_TOOLS: tuple[dict[str, Any], ...] = (
             "type": "object",
             "properties": {
                 "platform": {"type": "string", "enum": ["bilibili", "github", "x", "zhihu"]},
-                "mode": {"type": "string", "enum": ["full", "incremental"]},
+                "mode": {
+                    "type": "string",
+                    "enum": ["full", "incremental"],
+                    "description": _MODE_DESCRIPTION,
+                },
                 "publishedSince": {"type": "string", "format": "date-time"},
                 "publishedUntil": {"type": "string", "format": "date-time"},
                 "maxScanItems": {"type": "integer", "minimum": 1},
@@ -215,7 +227,7 @@ _SYNC_TOOLS: tuple[dict[str, Any], ...] = (
                     },
                 },
             },
-            "required": ["platform", "mode"],
+            "required": ["platform"],
             "additionalProperties": False,
         },
     },
@@ -289,12 +301,16 @@ _BROWSER_TOOLS: tuple[dict[str, Any], ...] = (
             "type": "object",
             "properties": {
                 "platform": {"type": "string", "enum": sorted(BROWSER_PLATFORMS)},
-                "mode": {"type": "string", "enum": ["full", "incremental"]},
+                "mode": {
+                    "type": "string",
+                    "enum": ["full", "incremental"],
+                    "description": _MODE_DESCRIPTION,
+                },
                 "publishedSince": {"type": "string"},
                 "publishedUntil": {"type": "string"},
                 "maxScanItems": {"type": "integer", "minimum": 1},
             },
-            "required": ["platform", "mode"],
+            "required": ["platform"],
             "additionalProperties": False,
         },
     },
@@ -347,7 +363,11 @@ _GITHUB_TOOLS: tuple[dict[str, Any], ...] = (
             "type": "object",
             "properties": {
                 "user": {"type": "string"},
-                "mode": {"type": "string", "enum": ["full", "incremental"]},
+                "mode": {
+                    "type": "string",
+                    "enum": ["full", "incremental"],
+                    "description": _MODE_DESCRIPTION,
+                },
                 "maxScanItems": {"type": "integer", "minimum": 1},
             },
             "required": ["user"],

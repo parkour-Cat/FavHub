@@ -42,6 +42,21 @@ def test_browser_platforms_exclude_github() -> None:
     assert sorted(BROWSER_PLATFORMS) == ["bilibili", "x", "zhihu"]
 
 
+def test_a_start_without_a_mode_is_incremental(
+    stack: tuple[BrowserGateway, BrowserCaptureStore, SyncModule],
+) -> None:
+    """Omitting mode has to mean incremental, not fail.
+
+    The safe default is not symmetric. Incremental on a platform with no
+    frontier scans to the end exactly like full, so a caller who meant full
+    loses a re-run at worst; full on a library that already has items rewrites
+    them. The schema says optional — this is the half that makes it true.
+    """
+    gateway, _, sync = stack
+    started = gateway.start({"platform": "zhihu"})
+    assert sync.get_status(started["job_id"])["mode"] == "incremental"
+
+
 def test_start_creates_a_sync_job_and_an_awaiting_session(
     stack: tuple[BrowserGateway, BrowserCaptureStore, SyncModule],
 ) -> None:
