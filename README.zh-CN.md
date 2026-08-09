@@ -2,6 +2,8 @@
 
 [English](README.md) · 简体中文
 
+[![CI](https://github.com/parkour-Cat/FavHub/actions/workflows/ci.yml/badge.svg)](https://github.com/parkour-Cat/FavHub/actions/workflows/ci.yml)
+
 FavHub 把你收藏了却再没打开过的东西镜像到本地：B 站收藏夹、X 书签、知乎收藏、GitHub star，
 汇成一个纯文件的本地库，建好检索索引，再通过 MCP 交给编程 Agent——于是你可以**向自己的收藏提问**，
 而不是滑动着找。
@@ -309,8 +311,12 @@ favhub --root data access-backfill
 ## 开发
 
 ```powershell
-uv sync --dev
+uv sync --all-extras
 ```
+
+extras 对开发不是可选的：语义检索在用到时才 import numpy，而测试覆盖了这条路径，
+所以不装 extras 的环境会因缺少模块而挂在门禁上，而不是因为你改的东西。dev 组默认
+就会安装，不需要额外加参数。
 
 合并前的完整质量门禁：
 

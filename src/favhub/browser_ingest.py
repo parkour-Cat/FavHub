@@ -13,6 +13,13 @@ That timing differs by platform, and the reason is folders:
   list and earliest favorited time are only known once every folder has been
   seen. Their observations therefore stay in memory until ``finish``.
 
+Routing is table-driven. ``_PLATFORMS`` maps a platform to the event kinds it
+accepts, the handler that folds one event into session state, and the flush that
+turns that state into batches. It mirrors the extension's ``ADAPTERS`` table and
+for the same reason: a platform is one entry, and a platform without an entry
+simply never routes. Adding a connector is adding an entry and its two
+functions — no existing branch has to learn the new platform's name.
+
 In-memory means exactly that: raw response bodies are never written to disk or
 logged, and a process restart loses pending observations. That is deliberate —
 the session pauses and the next run rescans, which is cheaper than persisting
@@ -50,13 +57,22 @@ from favhub.zhihu_models import ZhihuFavorite
 # stop at 20 so a flush maps one-to-one onto what it just acknowledged.
 BATCH_SIZE = 20
 
-_EVENT_KINDS = {
-    "x": frozenset({"x.bookmarks_page"}),
-    "bilibili": frozenset({"bilibili.video_bundle"}),
-    "zhihu": frozenset({"zhihu.items_page"}),
-}
-
 _INGEST_ERROR_CODES = BROWSER_ERROR_CODES | CAPTURE_ERROR_CODES
+
+
+@dataclass(frozen=True, slots=True)
+class _Platform:
+    """One row of the routing table.
+
+    ``handle`` and ``flush`` are unbound methods of :class:`BrowserIngestor`, so
+    they read as ordinary methods at the definition site and are called with the
+    ingestor explicitly here. The table is built after the class body, which is
+    the only reason these are not plain attributes on it.
+    """
+
+    events: frozenset[str]
+    handle: Callable[["BrowserIngestor", "_SessionState", Mapping[str, Any]], dict[str, Any]]
+    flush: Callable[["BrowserIngestor", "_SessionState"], None]
 
 
 class BrowserIngestError(Exception):
@@ -115,15 +131,16 @@ class BrowserIngestor:
             raise BrowserIngestError(
                 INVALID_MESSAGE, f"event platform does not match session platform: {platform}"
             )
+        registered = _PLATFORMS.get(platform)
+        if registered is None:
+            raise BrowserIngestError(
+                INVALID_MESSAGE, f"platform does not collect through the browser: {platform}"
+            )
         kind = _required(event, "kind")
-        if kind not in _EVENT_KINDS[platform]:
+        if kind not in registered.events:
             raise BrowserIngestError(INVALID_MESSAGE, f"unsupported event kind: {kind}")
         try:
-            if platform == "x":
-                return self._handle_x(state, event)
-            if platform == "bilibili":
-                return self._handle_bilibili(state, event)
-            return self._handle_zhihu(state, event)
+            return registered.handle(self, state, event)
         except CaptureError as error:
             # Parser codes cross unchanged: a logged-out session or a changed
             # page is a platform condition, not a protocol violation.
@@ -235,14 +252,17 @@ class BrowserIngestor:
     # -- flushing ------------------------------------------------------------
 
     def _flush_all(self, state: _SessionState) -> None:
-        if state.platform == "x":
-            items = state.pending
-            state.pending = []
-            self._submit_in_batches(state, items, scope_scans=None)
-        elif state.platform == "bilibili":
-            self._flush_bilibili(state)
-        else:
-            self._flush_zhihu(state)
+        registered = _PLATFORMS.get(state.platform)
+        if registered is None:
+            # No handler ever accepted an event for this platform, so nothing is
+            # held in memory. ``finish`` still has to close the scan.
+            return
+        registered.flush(self, state)
+
+    def _flush_x(self, state: _SessionState) -> None:
+        items = state.pending
+        state.pending = []
+        self._submit_in_batches(state, items, scope_scans=None)
 
     def _flush_bilibili(self, state: _SessionState) -> None:
         observations = bilibili_mapping.deduplicate(state.entries_by_scope, state.folder_names)
@@ -374,6 +394,28 @@ class BrowserIngestor:
         if scope_id not in known:
             raise BrowserIngestError(INVALID_MESSAGE, f"scope is not registered: {scope_id}")
         return scope_id, scope_name
+
+
+#: The routing table. One entry per platform that collects through the browser;
+#: a platform missing from it is rejected by name rather than falling through to
+#: whichever handler happened to be last.
+_PLATFORMS: dict[str, _Platform] = {
+    "x": _Platform(
+        events=frozenset({"x.bookmarks_page"}),
+        handle=BrowserIngestor._handle_x,
+        flush=BrowserIngestor._flush_x,
+    ),
+    "bilibili": _Platform(
+        events=frozenset({"bilibili.video_bundle"}),
+        handle=BrowserIngestor._handle_bilibili,
+        flush=BrowserIngestor._flush_bilibili,
+    ),
+    "zhihu": _Platform(
+        events=frozenset({"zhihu.items_page"}),
+        handle=BrowserIngestor._handle_zhihu,
+        flush=BrowserIngestor._flush_zhihu,
+    ),
+}
 
 
 def _decoded_body(event: Mapping[str, Any]) -> Any:

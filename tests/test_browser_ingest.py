@@ -151,6 +151,54 @@ def test_an_unknown_event_kind_is_rejected(
         )
 
 
+def test_a_platform_without_a_browser_adapter_is_rejected_by_name(
+    stack: tuple[BrowserIngestor, SyncModule, BrowserCaptureStore],
+) -> None:
+    """A platform missing from the routing table is refused by name.
+
+    GitHub is collected without a browser, so it has no entry. The kind check
+    used to index ``_EVENT_KINDS[platform]`` directly, so this raised a bare
+    ``KeyError`` instead of a coded protocol error.
+    """
+    ingestor, sync, sessions = stack
+    _, session_id = open_session(sync, sessions, "github")
+    with pytest.raises(BrowserIngestError) as error:
+        ingestor.handle(
+            session_id,
+            {
+                "type": "capture.response",
+                "platform": "github",
+                "kind": "zhihu.items_page",
+                "body": {},
+            },
+        )
+    assert "github" in error.value.message
+
+
+def test_finishing_an_unroutable_session_still_closes_the_scan(
+    stack: tuple[BrowserIngestor, SyncModule, BrowserCaptureStore],
+) -> None:
+    """The rejected event above leaves session state behind; ``finish`` must not
+    trip over a platform that has no flush."""
+    ingestor, sync, sessions = stack
+    job_id, session_id = open_session(sync, sessions, "github")
+    with pytest.raises(BrowserIngestError):
+        ingestor.handle(
+            session_id,
+            {"type": "capture.response", "platform": "github", "kind": "whatever", "body": {}},
+        )
+    ingestor.finish(
+        session_id,
+        observed_end=True,
+        max_scan_reached=False,
+        visible_total=None,
+        frontier_ids=(),
+        frontier_scopes=None,
+        scope_results=None,
+    )
+    assert sync.get_status(job_id)["platforms"][0]["platform"] == "github"
+
+
 def test_a_platform_error_envelope_surfaces_its_stable_code(
     stack: tuple[BrowserIngestor, SyncModule, BrowserCaptureStore],
 ) -> None:

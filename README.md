@@ -2,6 +2,8 @@
 
 English · [简体中文](README.zh-CN.md)
 
+[![CI](https://github.com/parkour-Cat/FavHub/actions/workflows/ci.yml/badge.svg)](https://github.com/parkour-Cat/FavHub/actions/workflows/ci.yml)
+
 FavHub is a local knowledge mirror for the things you saved and never read again. It
 collects your Bilibili favourites, X bookmarks, Zhihu collections and GitHub stars into
 a plain-file library on your own machine, indexes them for search, and exposes them to a
@@ -346,8 +348,13 @@ favhub --root data access-backfill
 ## Development
 
 ```powershell
-uv sync --dev
+uv sync --all-extras
 ```
+
+The extras are not optional for development. Semantic retrieval imports numpy at
+the point of use and the suite covers that path, so an environment without them
+fails the gate on a missing module rather than on anything you changed. The dev
+group installs by default and needs no flag.
 
 The full gate before merging:
 

@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  gate:
+    # The same gate the README documents under Development, in the same order.
+    #
+    # Windows-only on purpose. The Native Messaging host registers itself
+    # through winreg and three test modules exercise that path, so a Linux
+    # runner would fail on the platform rather than on the change under test.
+    # Everything above the install layer is plain Python; a ubuntu job becomes
+    # worth adding the day the setup path grows a non-Windows branch.
+    runs-on: windows-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+          cache-dependency-glob: uv.lock
+
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # --all-extras is load-bearing: the semantic retrieval path imports numpy
+      # at the point of use and the suite covers it, so an extras-less sync
+      # fails on a missing module rather than on anything the change did. The
+      # dev group installs by default, so it needs no flag. --frozen keeps the
+      # resolution honest — the lockfile is checked on its own below.
+      - name: Install dependencies
+        run: uv sync --all-extras --frozen
+
+      # Fails below 90% overall; the floor lives in pyproject.toml.
+      - name: Tests
+        run: uv run pytest --cov
+
+      - name: Extension tests
+        run: npm run test:extension
+
+      - name: Format
+        run: uv run ruff format --check .
+
+      - name: Lint
+        run: uv run ruff check .
+
+      - name: Types
+        run: uv run mypy src
+
+      - name: Lockfile
+        run: uv lock --check
+
+      # `git diff --check` is in the local gate but omitted here on purpose: it
+      # inspects the working tree, which is always clean on a fresh checkout, so
+      # in CI it would pass unconditionally and claim to check something it does
+      # not. It stays a pre-commit step.

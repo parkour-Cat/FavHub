@@ -9,9 +9,10 @@ It is strictly read-only. Being able to run it without changing anything is the
 point: the user should be able to ask what is wrong before deciding what to fix.
 """
 
+import ctypes
 import json
-import os
 from collections.abc import Sequence
+from ctypes import wintypes
 from dataclasses import asdict, dataclass
 from enum import StrEnum
 from pathlib import Path
@@ -20,6 +21,12 @@ from typing import Any
 from favhub.chrome_setup import NATIVE_HOST_KEY, Registry, registered_manifest_path
 from favhub.config import FavHubPaths, InstallPaths, persisted_data_root
 from favhub.setup_service import SKILL_PREFIX, AgentHost, CommandRunner
+
+# SYNCHRONIZE is exactly and only the right to wait on the process — no reading
+# it, no signalling it. Waiting is how the liveness question gets asked, so this
+# is the whole access this module ever needs.
+_SYNCHRONIZE = 0x00100000
+_WAIT_TIMEOUT = 0x00000102
 
 
 class CheckStatus(StrEnum):
@@ -70,20 +77,55 @@ def running_favhub_pid(root: Path) -> int | None:
     return None
 
 
+def _windows_pid_alive(pid: int) -> bool:
+    """Ask Windows whether a process exists, without signalling it.
+
+    `os.kill(pid, 0)` is the POSIX way to ask this and is wrong here. On Windows
+    CPython maps signal 0 — `signal.CTRL_C_EVENT` — onto
+    `GenerateConsoleCtrlEvent`, so the "probe" delivers Ctrl-C to every process
+    in that group sharing the caller's console. It never inspected anything: it
+    returned True whenever the *send* succeeded.
+
+    That made this module a liar about being read-only, and the blast radius was
+    real. The pid in the descriptor is FavHub's MCP server, which runs inside the
+    user's Agent window, so `favhub doctor` could interrupt the very session that
+    ran it. Under pytest on a runner with a real console it was worse still: the
+    suite writes its own pid into a descriptor, and the probe Ctrl-C'd pytest.
+
+    `OpenProcess` plus a zero-length wait asks the actual question. A handle we
+    cannot open means a pid we cannot vouch for, which is the same answer as
+    dead.
+    """
+    kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+    kernel32.OpenProcess.restype = ctypes.c_void_p
+    kernel32.OpenProcess.argtypes = (wintypes.DWORD, wintypes.BOOL, wintypes.DWORD)
+    kernel32.WaitForSingleObject.restype = wintypes.DWORD
+    kernel32.WaitForSingleObject.argtypes = (ctypes.c_void_p, wintypes.DWORD)
+    kernel32.CloseHandle.argtypes = (ctypes.c_void_p,)
+
+    handle = kernel32.OpenProcess(_SYNCHRONIZE, False, pid)
+    if not handle:
+        return False
+    try:
+        # A live process never signals, so the wait times out immediately.
+        return bool(kernel32.WaitForSingleObject(handle, 0) == _WAIT_TIMEOUT)
+    finally:
+        kernel32.CloseHandle(handle)
+
+
 def _pid_alive(pid: int) -> bool:
     """Whether a pid is worth believing, erring towards "no".
 
     Windows recycles pids, so a stale descriptor's pid can land on a process
-    this user has no right to open. `OpenProcess` fails there, and CPython
-    reports that failure as SystemError rather than OSError — catching only
-    OSError let it escape and took the whole report down with it. Every way of
-    not knowing means the same thing here: nothing is holding the pipe.
+    this user has no right to open. ctypes reports some of those failures as
+    SystemError rather than OSError — catching only OSError let it escape and
+    took the whole report down with it. Every way of not knowing means the same
+    thing here: nothing is holding the pipe.
     """
     try:
-        os.kill(pid, 0)
+        return _windows_pid_alive(pid)
     except (OSError, ValueError, TypeError, SystemError):
         return False
-    return True
 
 
 def _extension_checks(paths: InstallPaths) -> list[Check]:
