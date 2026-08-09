@@ -79,12 +79,15 @@ Agent to sync, and it drives the tools.
 | --- | --- | --- |
 | Bilibili | extension, active same-origin GETs | yes, per 收藏夹 |
 | Zhihu | extension, active same-origin GETs | yes, per 收藏夹 |
-| X | extension, passive interception while you scroll | no, one bookmark list |
+| X | extension, passive interception of the page's own requests | no, one bookmark list |
 | GitHub | FavHub calls the public starred API directly | no, one star list |
 
-X is the exception because its GraphQL endpoints authenticate through request headers. The
-extension records the response bodies of the page's own Bookmarks requests as you scroll
-rather than issuing any request of its own.
+X is the exception because its GraphQL endpoints authenticate through request headers.
+Rather than issue any request of its own, the extension hooks the page's own fetch and
+records the response bodies — and drives the page to make those requests by scrolling the
+bookmarks list itself. Passive describes the requests, not the scrolling: you do not scroll,
+and you do not have to keep the tab in front, which is why the scroll is instant rather than
+smooth (Chrome pauses the animation frames a smooth scroll needs in a hidden tab).
 
 **Smoke first.** Every Skill runs a small `maxScanItems` pass in the real logged-in browser
 before a full run. Fixture imports and the fake-browser tests are not a connector and prove
