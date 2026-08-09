@@ -115,14 +115,17 @@ raises the rate limit and does not widen what is collected.
 
 ### A platform quirk worth knowing
 
-Bilibili's player endpoint sometimes echoes back the video you asked about and then hands
-over a **different video's transcript**. It is intermittent — the same video can serve a
-correct transcript on one run and another video's on the next.
+A Bilibili collection sometimes ends up offered a **transcript belonging to a different
+video**. It is intermittent: the same video can yield a correct transcript on one run and
+another video's on the next. Where in the chain it goes wrong is not established — the
+detail response, the player response, and this adapter's own choice of track are all still
+candidates, and telling them apart needs a logged-in capture of the raw responses.
 
-FavHub checks the transcript object's name — Bilibili names them `<aid><cid><hash>` — before
-downloading it, and refuses one that does not name the video being collected. A refusal is
-recorded as `subtitle_status: "wrong_video"` with the offered name in `subtitle_offered`, so
-it is distinguishable from a video that simply has no transcript, and it never replaces a
+The check does not depend on knowing. Bilibili names transcript objects
+`<aid><cid><hash>`, so the object states which video it belongs to, and FavHub refuses one
+that does not name the video being collected before downloading it. A refusal is recorded as
+`subtitle_status: "wrong_video"` with the offered name in `subtitle_offered`, so it is
+distinguishable from a video that simply has no transcript, and it never replaces a
 transcript already held. The accepted object's name is kept in `subtitle_source`, which is
 the only way to answer "whose words are these?" about a transcript already written down.
 

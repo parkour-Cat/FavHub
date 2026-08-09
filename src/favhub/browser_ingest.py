@@ -87,6 +87,7 @@ class _SessionState:
     subtitle_raw: dict[str, str] = field(default_factory=dict)
     subtitle_source: dict[str, str] = field(default_factory=dict)
     subtitle_mismatch: dict[str, str] = field(default_factory=dict)
+    subtitle_asked: dict[str, str] = field(default_factory=dict)
 
 
 def _default_clock() -> datetime:
@@ -212,6 +213,12 @@ class BrowserIngestor:
         mismatch = event.get("subtitleMismatch")
         if isinstance(mismatch, str):
             state.subtitle_mismatch[entry.bvid] = mismatch
+            asked = event.get("subtitleRequestedCid")
+            tracks = event.get("subtitleTrackCount")
+            if isinstance(asked, str) and asked:
+                state.subtitle_asked[entry.bvid] = (
+                    f"cid={asked} tracks={tracks}" if isinstance(tracks, int) else f"cid={asked}"
+                )
         return {"mapped": 1, "submitted": []}
 
     def _handle_zhihu(self, state: _SessionState, event: Mapping[str, Any]) -> dict[str, Any]:
@@ -248,6 +255,7 @@ class BrowserIngestor:
                 subtitle_raw=state.subtitle_raw.get(bvid),
                 subtitle_source=state.subtitle_source.get(bvid),
                 subtitle_mismatch=state.subtitle_mismatch.get(bvid),
+                subtitle_asked=state.subtitle_asked.get(bvid),
                 observed_at=observed_at,
             )
             for bvid, observation in observations.items()

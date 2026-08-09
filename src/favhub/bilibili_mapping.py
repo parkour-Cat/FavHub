@@ -78,6 +78,7 @@ def map_captured_item(
     subtitle_raw: str | None = None,
     subtitle_source: str | None = None,
     subtitle_mismatch: str | None = None,
+    subtitle_asked: str | None = None,
     observed_at: datetime,
     extractor_version: str = EXTRACTOR_VERSION,
 ) -> CapturedItem:
@@ -154,6 +155,11 @@ def map_captured_item(
         # The name that was refused, so the refusal can be checked rather than
         # taken on faith.
         platform_metadata["subtitle_offered"] = subtitle_mismatch
+    if subtitle_asked is not None and subtitle_mismatch is not None:
+        # What the refusal was measured against. Without it a wrong_video cannot
+        # separate "answered wrongly" from "asked wrongly with a cid the detail
+        # response got wrong", and both end here looking identical.
+        platform_metadata["subtitle_asked"] = subtitle_asked
     if observation.favorited_at is not None:
         platform_metadata["favorited_at"] = isoformat(observation.favorited_at)
     if cover_url is not None:

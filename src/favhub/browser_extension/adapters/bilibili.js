@@ -314,6 +314,8 @@ export function createBilibiliAdapter({
       subtitleRaw: null,
       subtitleSource: null,
       subtitleMismatch: null,
+      subtitleRequestedCid: null,
+      subtitleTrackCount: null,
     };
     const cid = detail.ok ? detail.data.cid : null;
     if (typeof cid !== "number") return empty;
@@ -331,9 +333,18 @@ export function createBilibiliAdapter({
     const source = subtitleObjectName(track.url);
     if (!subtitleObjectBelongsTo(source, cid)) {
       // Refusing silently would store as "this video has no transcript", which
-      // is a different and much less interesting fact than "Bilibili offered
-      // another video's". The name it offered travels so the claim is checkable.
-      return { ...empty, subtitleMismatch: source ?? "" };
+      // is a different and much less interesting fact than "this video was
+      // offered somebody else's". Both the name that was offered and the cid it
+      // was measured against travel, because without the second one a refusal
+      // cannot distinguish being answered wrongly from having asked wrongly —
+      // the detail response supplies this cid, and if it were the wrong video's
+      // then every check downstream agrees with itself and still ends up here.
+      return {
+        ...empty,
+        subtitleMismatch: source ?? "",
+        subtitleRequestedCid: String(cid),
+        subtitleTrackCount: (player.data?.subtitle?.subtitles ?? []).length,
+      };
     }
 
     await wait(REQUEST_INTERVAL_MS);
@@ -388,10 +399,7 @@ export function createBilibiliAdapter({
         // Python side records what it could.
         await wait(REQUEST_INTERVAL_MS);
         const detail = await fetchJson(detailUrl(entry.bvid));
-        const { subtitle, subtitleRaw, subtitleSource, subtitleMismatch } = await fetchSubtitle(
-          entry.bvid,
-          detail,
-        );
+        const subtitleResult = await fetchSubtitle(entry.bvid, detail);
 
         await controller.offer({
           kind: "bilibili.video_bundle",
@@ -400,10 +408,7 @@ export function createBilibiliAdapter({
           scopeName: folder.scopeName,
           resource: entry.media,
           detail: detail.ok ? { code: 0, data: detail.data } : null,
-          subtitle,
-          subtitleRaw,
-          subtitleSource,
-          subtitleMismatch,
+          ...subtitleResult,
         });
 
         scanned += 1;
