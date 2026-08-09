@@ -115,11 +115,16 @@ raises the rate limit and does not widen what is collected.
 
 ### A platform quirk worth knowing
 
-A Bilibili collection sometimes ends up offered a **transcript belonging to a different
-video**. It is intermittent: the same video can yield a correct transcript on one run and
-another video's on the next. Where in the chain it goes wrong is not established — the
-detail response, the player response, and this adapter's own choice of track are all still
-candidates, and telling them apart needs a logged-in capture of the raw responses.
+A Bilibili collection is sometimes offered a **transcript belonging to a different video**.
+It is intermittent: the same video can yield a correct transcript on one run and another
+video's on the next.
+
+The request is not what goes wrong. The detail response supplies the title, the duration and
+the cid together, and for every refusal recorded here the stored title and duration match the
+real video exactly — so the cid sent with them was that video's too. The foreign transcript
+therefore comes back in the player response. What is still open is whether that response
+offered only the foreign track, or offered the right one beside it and this adapter's
+preference for a human-authored track picked the wrong one.
 
 The check does not depend on knowing. Bilibili names transcript objects
 `<aid><cid><hash>`, so the object states which video it belongs to, and FavHub refuses one
