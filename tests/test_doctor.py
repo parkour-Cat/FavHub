@@ -1,11 +1,13 @@
 import json
+import subprocess
+import sys
 from pathlib import Path
 
 import pytest
 
 from favhub.chrome_setup import NATIVE_HOST_KEY, FakeRegistry
 from favhub.config import InstallPaths, save_install_config
-from favhub.doctor import CheckStatus, run_doctor
+from favhub.doctor import CheckStatus, _pid_alive, run_doctor
 from favhub.setup_service import AgentHost, CommandResult, run_setup
 
 EXTENSION_ID = "abjlifflomnolgbngicokdhphnnggmim"
@@ -153,14 +155,36 @@ def test_a_running_pipe_is_reported_and_a_stale_descriptor_is_not_mistaken_for_o
     assert "stale" in check["detail"].lower()
 
 
+def test_the_probe_inspects_a_process_instead_of_signalling_it() -> None:
+    """A real process, watched across its own death, is the only honest check.
+
+    `os.kill(pid, 0)` satisfied every other test in this file by accident. On
+    Windows it maps to `GenerateConsoleCtrlEvent`, so it answered "alive"
+    whenever the Ctrl-C it sent was accepted — it never looked at the process.
+    Fixture pids could not tell the two apart, because a pid nobody owns fails
+    to signal and fails to open alike.
+
+    The dead half also pins the reason a bare `OpenProcess` is not enough: this
+    test holds the child's handle open through `Popen`, so the pid stays
+    openable after it exits and only the wait reveals that it is gone.
+    """
+    child = subprocess.Popen([sys.executable, "-c", "import sys; sys.stdin.read()"])
+    try:
+        assert _pid_alive(child.pid) is True
+    finally:
+        child.kill()
+        child.wait(timeout=30)
+    assert _pid_alive(child.pid) is False
+
+
 def test_a_pid_that_cannot_be_inspected_is_not_running_rather_than_a_crash(
     installed: tuple[InstallPaths, Path, FakeRegistry], monkeypatch: pytest.MonkeyPatch
 ) -> None:
     """Windows recycles pids, and the one in a stale descriptor can land on a
-    process this user may not open. `OpenProcess` then fails in a way CPython
-    surfaces as SystemError, not OSError — so catching OSError alone let it
-    escape and took down the whole report. Diagnosing an install is the one
-    thing that has to work when everything else is broken.
+    process this user may not open. That failure can surface as SystemError
+    rather than OSError — so catching OSError alone let it escape and took down
+    the whole report. Diagnosing an install is the one thing that has to work
+    when everything else is broken.
     """
     paths, data_root, registry = installed
     state = data_root / "state"
@@ -178,10 +202,10 @@ def test_a_pid_that_cannot_be_inspected_is_not_running_rather_than_a_crash(
         encoding="utf-8",
     )
 
-    def refuses(_pid: int, _signal: int) -> None:
+    def refuses(_pid: int) -> bool:
         raise SystemError("<class 'OSError'> returned a result with an exception set")
 
-    monkeypatch.setattr("favhub.doctor.os.kill", refuses)
+    monkeypatch.setattr("favhub.doctor._windows_pid_alive", refuses)
 
     report = run_doctor(paths, registry=registry, runner=fake_runner(), hosts=[])
     check = by_name(report)["runtime_descriptor"]
