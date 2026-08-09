@@ -11,13 +11,13 @@ GitHub 是唯一不需要浏览器的平台——star 列表是公开 REST 端�
 
 1. **预检**：`favhub.status` 确认 MCP 可用。
 2. **确认登录名**：`user` 是 GitHub 登录名（URL 里 `github.com/<这一段>`），不是昵称、不是邮箱。用户改过用户名的话旧名会 404。
-3. **首次冒烟**：第一次对某个账号跑，先带 `maxScanItems: 10` 验证通路，再跑全量。
+3. **首次冒烟**：第一次对某个账号跑，先带 `maxScanItems: 10` 验证通路，再不带上限跑一次。这里说的是去掉 `maxScanItems`，不是把 `mode` 改成 `full`。
 4. **调用**：
 
    | 参数 | 说明 |
    | --- | --- |
    | `user` | 必填，GitHub 登录名 |
-   | `mode` | `incremental`（默认，遇到上次的 frontier 即停）或 `full` |
+   | `mode` | `incremental`（默认，遇到上次的 frontier 即停）或 `full`。只有要刷新已入库的仓库时才用 `full`——增量把库里已有的条目直接当重复跳过、不比对内容。**不要因为"第一次同步"就选 `full`**：还没有 frontier 时增量本来就会扫到列表末尾。 |
    | `maxScanItems` | 可选正整数，扫到这么多条就停 |
 
 5. **读结果并复述**：`status.platforms[0].counts` 里的 `added` / `duplicates` 是这次的实际战果；`readmes_missing` 是没有 README 因而只有 description 的仓库数（正常现象，不是失败）；`authenticated` 说明这次有没有用上凭证。

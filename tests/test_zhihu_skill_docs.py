@@ -56,6 +56,11 @@ REQUIRED_SKILL_MARKERS = (
     "maxScanItems",
     "冒烟",
     "fixture",
+    # Mode is required by the tool and has no default, so the Skill has to
+    # decide rather than ask. It must also not equate a first run with a full
+    # one: with no frontier yet, incremental already scans to the end.
+    "默认 `incremental`",
+    "第一次同步",
 )
 
 # Instructions from the pre-extension design. An Agent that still followed

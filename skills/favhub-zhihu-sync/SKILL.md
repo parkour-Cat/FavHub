@@ -31,6 +31,13 @@ description: 通过 FavHub 浏览器扩展采集用户已登录的知乎收藏�
 
 ### 1. 启动任务
 
+**先定 mode。用户没明说时按下面的规则自己定，不要反问：默认 `incremental`。** 只有两种情况该用 `full`：
+
+- **要刷新已入库的条目**（标题、正文或作者信息变了）。增量把库里已有的条目直接当重复跳过、不比对内容，所以它刷新不了任何东西。
+- **要补历史条目**，例如配合 `publishedSince`/`publishedUntil` 捞过去的存量。增量扫到 frontier 就停，够不到 frontier 以下的部分。
+
+**不要因为"第一次同步"就选 `full`。** 这个平台还没有 frontier 时，增量本来就会一路扫到收藏夹末尾，与全量等价；而它还顺带保证了中途失败重跑时不会重写已入库的条目。
+
 调用 `favhub.browser_start`（`platform: "zhihu"`，mode 为 `full` 或 `incremental`，可选 `publishedSince`/`publishedUntil`、`maxScanItems`）。返回 `job_id`、浏览器会话与 `opened_url`。
 
 - **收藏夹由扩展自行枚举**，任务不需要预先传 scopes。
