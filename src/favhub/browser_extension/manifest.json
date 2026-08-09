@@ -1,0 +1,57 @@
+{
+  "manifest_version": 3,
+  "name": "FavHub Collector",
+  "version": "0.2.1",
+  "description": "Collects your own saved items for the local FavHub library. Runs only while you start a sync.",
+  "minimum_chrome_version": "116",
+  "permissions": [
+    "nativeMessaging",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://x.com/*",
+    "https://twitter.com/*",
+    "https://www.bilibili.com/*",
+    "https://space.bilibili.com/*",
+    "https://api.bilibili.com/*",
+    "https://aisubtitle.hdslb.com/*",
+    "https://www.zhihu.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://x.com/*",
+        "https://twitter.com/*",
+        "https://www.bilibili.com/*",
+        "https://space.bilibili.com/*",
+        "https://www.zhihu.com/*"
+      ],
+      "js": [
+        "bridge.js",
+        "content-isolated.js"
+      ],
+      "run_at": "document_start",
+      "world": "ISOLATED"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "main-hook.js"
+      ],
+      "matches": [
+        "https://x.com/*",
+        "https://twitter.com/*"
+      ]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "FavHub Collector"
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4QITPlo/SohS4GLM9nq5i1UMiQAmlAvNWf2HW69b//jIfKyhj9yqq4YQKmrMvdV9OhFN2cwJw4/BhxGpe/3gIfdLAp+2yrUCXC1MugDp0t0AJTbVgWGetuqAFY9GlhwxQ1q7DFOXdhpGdbCOeaBZ9rfkcBDRW8E1sLW8/m8eWLnbv+sabBh1FgPHGmxdp6borPO6Bg7CvUE7RqUX7HVZ8NRV6+8xxXCh/yWZmppFpslCz9MOkSV1sPhL1W8Tw2mRIfaeEnf1s7KQ1ji9tMkMTOe+cnTIUagdS+dBews39l4+4zFnwOaxyHwTe+DXXJOKAGmzAiozdCL/nzFI07Fd4QIDAQAB"
+}

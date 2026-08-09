@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "type": "module",
+  "name": "favhub-extension-dev",
+  "description": "Development-only test harness for the FavHub Chrome extension. Node is not a FavHub runtime dependency.",
+  "scripts": {
+    "test:extension": "node --test tests_js/browser_extension/*.test.mjs"
+  }
+}

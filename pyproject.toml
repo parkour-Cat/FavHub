@@ -1,0 +1,66 @@
+[project]
+name = "favhub"
+version = "0.1.0"
+description = "Local, agent-accessible knowledge mirror for saved content"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+embedding = ["fastembed>=0.8,<0.9", "numpy>=2,<3"]
+
+[project.scripts]
+favhub = "favhub.cli:main"
+favhub-mcp = "favhub.mcp_server:main"
+favhub-native-host = "favhub.native_host:main"
+
+[tool.hatch.build.targets.wheel]
+# browser_extension lives inside the package directory, so the unpacked
+# extension ships automatically; `favhub setup` copies it from there. Node is a
+# development dependency only and is never needed to run FavHub.
+packages = ["src/favhub"]
+
+[tool.hatch.build.targets.wheel.force-include]
+# Skills live outside src/ but must travel with the wheel: setup installs them
+# into each Agent host from the installed package, not from a checkout.
+"skills" = "favhub/skills"
+
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+  "mypy>=1.16,<2",
+  "pytest>=8.4,<9",
+  "pytest-cov>=6,<7",
+  "ruff>=0.12,<0.13",
+]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+# Deliberately not in addopts: a focused run measures one file against the
+# whole package and would fail a threshold it was never trying to meet. These
+# apply only when --cov is passed, so the full gate enforces the floor and
+# `pytest tests/test_chunking.py` stays fast and quiet.
+[tool.coverage.run]
+source = ["favhub"]
+branch = false
+
+[tool.coverage.report]
+fail_under = 90
+show_missing = true
+skip_covered = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+packages = ["favhub"]

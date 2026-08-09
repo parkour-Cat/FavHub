@@ -1,0 +1,21 @@
+.worktrees/
+.tmp/
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.py[cod]
+coverage.xml
+.coverage
+htmlcov/
+data/
+# Any `pytest --basetemp` directory, whatever a debugging run happens to name it.
+.pytest-*/
+.pytest-runs/
+.review-*/
+manual-*/
+manual-task5*.sqlite3
+
+# Implementation plans and design specs: kept locally, not published.
+docs/superpowers/

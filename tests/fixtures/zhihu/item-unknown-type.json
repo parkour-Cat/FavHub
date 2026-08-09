@@ -1,0 +1,22 @@
+{
+ "data": [
+  {
+   "created": "2026-01-01T12:00:00+08:00",
+   "content": {
+    "type": "zvideo",
+    "id": 987654321,
+    "title": "示例视频标题",
+    "url": "https://www.zhihu.com/zvideo/987654321",
+    "excerpt": "视频摘要示例",
+    "author": {
+     "name": "示例名称7",
+     "type": "people"
+    }
+   }
+  }
+ ],
+ "paging": {
+  "is_end": true,
+  "totals": 1
+ }
+}

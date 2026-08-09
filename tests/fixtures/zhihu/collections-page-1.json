@@ -1,0 +1,80 @@
+{
+ "data": [
+  {
+   "id": 753110114,
+   "type": "collection",
+   "title": "我的收藏",
+   "is_public": false,
+   "url": "https://api.zhihu.com/collections/753110114",
+   "description": "",
+   "follower_count": 0,
+   "answer_count": 104,
+   "item_count": 104,
+   "like_count": 0,
+   "view_count": 21,
+   "comment_count": 0,
+   "is_following": false,
+   "is_liking": false,
+   "created_time": 1635577914,
+   "updated_time": 1783949346,
+   "creator": {
+    "id": "redacted",
+    "name": "示例名称3",
+    "type": "people"
+   },
+   "is_default": true
+  },
+  {
+   "id": 844560325,
+   "type": "collection",
+   "title": "示例内容71",
+   "is_public": true,
+   "url": "https://api.zhihu.com/collections/844560325",
+   "description": "",
+   "follower_count": 0,
+   "answer_count": 18,
+   "item_count": 18,
+   "like_count": 0,
+   "view_count": 2,
+   "comment_count": 0,
+   "is_following": false,
+   "is_liking": false,
+   "created_time": 1668414941,
+   "updated_time": 1724152645,
+   "creator": {
+    "id": "redacted",
+    "name": "示例名称3",
+    "type": "people"
+   },
+   "is_default": false
+  },
+  {
+   "id": 210943971,
+   "type": "collection",
+   "title": "示例内容72",
+   "is_public": true,
+   "url": "https://api.zhihu.com/collections/210943971",
+   "description": "",
+   "follower_count": 0,
+   "answer_count": 52,
+   "item_count": 52,
+   "like_count": 0,
+   "view_count": 5,
+   "comment_count": 0,
+   "is_following": false,
+   "is_liking": false,
+   "created_time": 1515121686,
+   "updated_time": 1711534912,
+   "creator": {
+    "id": "redacted",
+    "name": "示例名称3",
+    "type": "people"
+   },
+   "is_default": false
+  }
+ ],
+ "paging": {
+  "is_end": false,
+  "totals": 23
+ }
+}

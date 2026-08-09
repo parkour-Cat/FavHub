@@ -1,0 +1,1345 @@
+{
+ "code": 0,
+ "message": "OK",
+ "ttl": 1,
+ "data": {
+  "bvid": "BV1bkz2gvaz6",
+  "aid": 116855859644573,
+  "videos": 1,
+  "tid": 230,
+  "tid_v2": 2096,
+  "tname": "",
+  "tname_v2": "",
+  "copyright": 3,
+  "pic": "http://i1.hdslb.com/bfs/archive/bbd61437e3a703e6a698ed3aeb6fb9809ea8d645.jpg",
+  "title": "示例标题25：用于验证解析与索引行为",
+  "pubdate": 1783079085,
+  "ctime": 1783079085,
+  "desc": "示例简介2",
+  "desc_v2": [
+   {
+    "raw_text": "示例简介2",
+    "type": 1,
+    "biz_id": 0
+   }
+  ],
+  "state": 0,
+  "duration": 199,
+  "rights": {
+   "bp": 0,
+   "elec": 0,
+   "download": 1,
+   "movie": 0,
+   "pay": 0,
+   "hd5": 0,
+   "no_reprint": 0,
+   "autoplay": 1,
+   "ugc_pay": 0,
+   "is_cooperation": 0,
+   "ugc_pay_preview": 0,
+   "no_background": 0,
+   "clean_mode": 0,
+   "is_stein_gate": 0,
+   "is_360": 0,
+   "no_share": 0,
+   "arc_pay": 0,
+   "free_watch": 0
+  },
+  "owner": {
+   "mid": 687837346,
+   "name": "示例UP主二",
+   "face": "https://i1.hdslb.com/bfs/face/e9f3eb205cfd1d47ed5cff17078d2d3fceb1e15e.jpg"
+  },
+  "stat": {
+   "aid": 116855859644573,
+   "view": 2475,
+   "danmaku": 2,
+   "reply": 7,
+   "favorite": 189,
+   "coin": 22,
+   "share": 21,
+   "now_rank": 0,
+   "his_rank": 0,
+   "like": 64,
+   "dislike": 0,
+   "evaluation": "",
+   "vt": 0
+  },
+  "argue_info": {
+   "argue_msg": "含AI生成内容",
+   "argue_type": 0,
+   "argue_link": ""
+  },
+  "dynamic": "",
+  "cid": 39620968956,
+  "dimension": {
+   "width": 2560,
+   "height": 1440,
+   "rotate": 0
+  },
+  "season_id": 7938307,
+  "premiere": null,
+  "teenage_mode": 1,
+  "is_chargeable_season": false,
+  "is_story": false,
+  "is_upower_exclusive": false,
+  "is_upower_play": false,
+  "is_upower_preview": false,
+  "enable_vt": 0,
+  "vt_display": "",
+  "is_upower_exclusive_with_qa": false,
+  "no_cache": false,
+  "pages": [
+   {
+    "cid": 39620968956,
+    "page": 1,
+    "from": "vupload",
+    "part": "示例标题25：用于验证解析与索引行为",
+    "duration": 199,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 2560,
+     "height": 1440,
+     "rotate": 0
+    },
+    "first_frame": "http://i1.hdslb.com/bfs/storyff/lGqTzhRfk9Kkyb2QK2HdUU5w1KmC4i7H.jpg",
+    "ctime": 1783079085
+   }
+  ],
+  "subtitle": {
+   "allow_submit": false,
+   "list": [
+    {
+     "id": 1441351323755638336,
+     "lan": "ai-zh",
+     "lan_doc": "中文",
+     "is_lock": false,
+     "subtitle_url": "",
+     "type": 1,
+     "id_str": "1436015670438220195",
+     "ai_type": 0,
+     "ai_status": 2,
+     "subtitle_height": null,
+     "author": {
+      "mid": 0,
+      "name": "",
+      "sex": "",
+      "face": "",
+      "sign": "",
+      "rank": 0,
+      "birthday": 0,
+      "is_fake_account": 0,
+      "is_deleted": 0,
+      "in_reg_audit": 0,
+      "is_senior_member": 0,
+      "name_render": null,
+      "handle": ""
+     }
+    }
+   ]
+  },
+  "ugc_season": {
+   "id": 7938307,
+   "title": "示例内容22，用",
+   "cover": "https://example1.com/87nqondot8",
+   "mid": 687837346,
+   "intro": "",
+   "sign_state": 0,
+   "attribute": 140,
+   "sections": [
+    {
+     "season_id": 7938307,
+     "id": 8819161,
+     "title": "正片",
+     "type": 1,
+     "episodes": [
+      {
+       "season_id": 7938307,
+       "section_id": 8819161,
+       "id": 190097586,
+       "aid": 116431899396939,
+       "cid": 37643814216,
+       "title": "示例标题23：用于验证解析与索引行为",
+       "attribute": 0,
+       "arc": {
+        "aid": 116431899396939,
+        "videos": 0,
+        "type_id": 0,
+        "type_name": "",
+        "copyright": 0,
+        "pic": "http://i1.hdslb.com/bfs/archive/bb5d3400cb05650905be99e8d9b98510cbdbd70a.jpg",
+        "title": "示例标题23：用于验证解析与索引行为",
+        "pubdate": 1776609895,
+        "ctime": 1776609895,
+        "desc": "",
+        "state": 0,
+        "duration": 513,
+        "rights": {
+         "bp": 0,
+         "elec": 0,
+         "download": 0,
+         "movie": 0,
+         "pay": 0,
+         "hd5": 0,
+         "no_reprint": 0,
+         "autoplay": 0,
+         "ugc_pay": 0,
+         "is_cooperation": 0,
+         "ugc_pay_preview": 0,
+         "arc_pay": 0,
+         "free_watch": 0
+        },
+        "author": {
+         "mid": 687837346,
+         "name": "示例UP主二",
+         "face": "https://i1.hdslb.com/bfs/face/e9f3eb205cfd1d47ed5cff17078d2d3fceb1e15e.jpg"
+        },
+        "stat": {
+         "aid": 116431899396939,
+         "view": 9706,
+         "danmaku": 4,
+         "reply": 34,
+         "fav": 524,
+         "coin": 81,
+         "share": 69,
+         "now_rank": 0,
+         "his_rank": 0,
+         "like": 204,
+         "dislike": 0,
+         "evaluation": "",
+         "argue_msg": "",
+         "vt": 0,
+         "vv": 9706
+        },
+        "dynamic": "",
+        "dimension": {
+         "width": 0,
+         "height": 0,
+         "rotate": 0
+        },
+        "desc_v2": null,
+        "is_chargeable_season": false,
+        "is_blooper": false,
+        "enable_vt": 0,
+        "vt_display": "",
+        "type_id_v2": 0,
+        "type_name_v2": "",
+        "is_lesson_video": 0
+       },
+       "page": {
+        "cid": 37643814216,
+        "page": 1,
+        "from": "vupload",
+        "part": "示例标题23：用于验证解析与索引行为",
+        "duration": 513,
+        "vid": "",
+        "weblink": "",
+        "dimension": {
+         "width": 2560,
+         "height": 1440,
+         "rotate": 0
+        }
+       },
+       "bvid": "BV1jffmvdzjx",
+       "pages": [
+        {
+         "cid": 37643814216,
+         "page": 1,
+         "from": "vupload",
+         "part": "示例标题23：用于验证解析与索引行为",
+         "duration": 513,
+         "vid": "",
+         "weblink": "",
+         "dimension": {
+          "width": 2560,
+          "height": 1440,
+          "rotate": 0
+         }
+        }
+       ]
+      },
+      {
+       "season_id": 7938307,
+       "section_id": 8819161,
+       "id": 195332244,
+       "aid": 116571854865915,
+       "cid": 38324932036,
+       "title": "示例标题20：用于验证解析与索引行为",
+       "attribute": 0,
+       "arc": {
+        "aid": 116571854865915,
+        "videos": 0,
+        "type_id": 0,
+        "type_name": "",
+        "copyright": 0,
+        "pic": "http://i1.hdslb.com/bfs/archive/eab6c6e59ae406d6629c06ba7f855901cfc6e441.jpg",
+        "title": "示例标题20：用于验证解析与索引行为",
+        "pubdate": 1778749200,
+        "ctime": 1778749200,
+        "desc": "",
+        "state": 0,
+        "duration": 209,
+        "rights": {
+         "bp": 0,
+         "elec": 0,
+         "download": 0,
+         "movie": 0,
+         "pay": 0,
+         "hd5": 0,
+         "no_reprint": 0,
+         "autoplay": 0,
+         "ugc_pay": 0,
+         "is_cooperation": 0,
+         "ugc_pay_preview": 0,
+         "arc_pay": 0,
+         "free_watch": 0
+        },
+        "author": {
+         "mid": 687837346,
+         "name": "示例UP主二",
+         "face": "https://i1.hdslb.com/bfs/face/e9f3eb205cfd1d47ed5cff17078d2d3fceb1e15e.jpg"
+        },
+        "stat": {
+         "aid": 116571854865915,
+         "view": 3243,
+         "danmaku": 2,
+         "reply": 17,
+         "fav": 157,
+         "coin": 39,
+         "share": 19,
+         "now_rank": 0,
+         "his_rank": 0,
+         "like": 76,
+         "dislike": 0,
+         "evaluation": "",
+         "argue_msg": "",
+         "vt": 0,
+         "vv": 3243
+        },
+        "dynamic": "",
+        "dimension": {
+         "width": 0,
+         "height": 0,
+         "rotate": 0
+        },
+        "desc_v2": null,
+        "is_chargeable_season": false,
+        "is_blooper": false,
+        "enable_vt": 0,
+        "vt_display": "",
+        "type_id_v2": 0,
+        "type_name_v2": "",
+        "is_lesson_video": 0
+       },
+       "page": {
+        "cid": 38324932036,
+        "page": 1,
+        "from": "vupload",
+        "part": "示例标题20：用于验证解析与索引行为",
+        "duration": 209,
+        "vid": "",
+        "weblink": "",
+        "dimension": {
+         "width": 2706,
+         "height": 1440,
+         "rotate": 0
+        }
+       },
+       "bvid": "BV13zurgu701",
+       "pages": [
+        {
+         "cid": 38324932036,
+         "page": 1,
+         "from": "vupload",
+         "part": "示例标题20：用于验证解析与索引行为",
+         "duration": 209,
+         "vid": "",
+         "weblink": "",
+         "dimension": {
+          "width": 2706,
+          "height": 1440,
+          "rotate": 0
+         }
+        }
+       ]
+      },
+      {
+       "season_id": 7938307,
+       "section_id": 8819161,
+       "id": 196241370,
+       "aid": 116595141708652,
+       "cid": 38424480847,
+       "title": "示例标题12：用于验证解析与索引行为",
+       "attribute": 0,
+       "arc": {
+        "aid": 116595141708652,
+        "videos": 0,
+        "type_id": 0,
+        "type_name": "",
+        "copyright": 0,
+        "pic": "http://i1.hdslb.com/bfs/archive/a148408ee5cee7ebfbcfe55edbf994e8b1a1e5ef.jpg",
+        "title": "示例标题12：用于验证解析与索引行为",
+        "pubdate": 1779100811,
+        "ctime": 1779100811,
+        "desc": "",
+        "state": 0,
+        "duration": 339,
+        "rights": {
+         "bp": 0,
+         "elec": 0,
+         "download": 0,
+         "movie": 0,
+         "pay": 0,
+         "hd5": 0,
+         "no_reprint": 0,
+         "autoplay": 0,
+         "ugc_pay": 0,
+         "is_cooperation": 0,
+         "ugc_pay_preview": 0,
+         "arc_pay": 0,
+         "free_watch": 0
+        },
+        "author": {
+         "mid": 687837346,
+         "name": "示例UP主二",
+         "face": "https://i1.hdslb.com/bfs/face/e9f3eb205cfd1d47ed5cff17078d2d3fceb1e15e.jpg"
+        },
+        "stat": {
+         "aid": 116595141708652,
+         "view": 2653,
+         "danmaku": 1,
+         "reply": 16,
+         "fav": 97,
+         "coin": 30,
+         "share": 19,
+         "now_rank": 0,
+         "his_rank": 0,
+         "like": 51,
+         "dislike": 0,
+         "evaluation": "",
+         "argue_msg": "",
+         "vt": 0,
+         "vv": 2653
+        },
+        "dynamic": "",
+        "dimension": {
+         "width": 0,
+         "height": 0,
+         "rotate": 0
+        },
+        "desc_v2": null,
+        "is_chargeable_season": false,
+        "is_blooper": false,
+        "enable_vt": 0,
+        "vt_display": "",
+        "type_id_v2": 0,
+        "type_name_v2": "",
+        "is_lesson_video": 0
+       },
+       "page": {
+        "cid": 38424480847,
+        "page": 1,
+        "from": "vupload",
+        "part": "示例标题12：用于验证解析与索引行为",
+        "duration": 339,
+        "vid": "",
+        "weblink": "",
+        "dimension": {
+         "width": 2030,
+         "height": 1080,
+         "rotate": 0
+        }
+       },
+       "bvid": "BV1fcn8zsvw3",
+       "pages": [
+        {
+         "cid": 38424480847,
+         "page": 1,
+         "from": "vupload",
+         "part": "示例标题12：用于验证解析与索引行为",
+         "duration": 339,
+         "vid": "",
+         "weblink": "",
+         "dimension": {
+          "width": 2030,
+          "height": 1080,
+          "rotate": 0
+         }
+        }
+       ]
+      },
+      {
+       "season_id": 7938307,
+       "section_id": 8819161,
+       "id": 198363405,
+       "aid": 116651546708711,
+       "cid": 38672600482,
+       "title": "示例标题16：用于验证解析与索引行为",
+       "attribute": 0,
+       "arc": {
+        "aid": 116651546708711,
+        "videos": 0,
+        "type_id": 0,
+        "type_name": "",
+        "copyright": 0,
+        "pic": "http://i0.hdslb.com/bfs/archive/e11b14a31348c9f037ba44df60471a58ed836355.jpg",
+        "title": "示例标题16：用于验证解析与索引行为",
+        "pubdate": 1779964200,
+        "ctime": 1779964200,
+        "desc": "",
+        "state": 0,
+        "duration": 559,
+        "rights": {
+         "bp": 0,
+         "elec": 0,
+         "download": 0,
+         "movie": 0,
+         "pay": 0,
+         "hd5": 0,
+         "no_reprint": 0,
+         "autoplay": 0,
+         "ugc_pay": 0,
+         "is_cooperation": 0,
+         "ugc_pay_preview": 0,
+         "arc_pay": 0,
+         "free_watch": 0
+        },
+        "author": {
+         "mid": 687837346,
+         "name": "示例UP主二",
+         "face": "https://i1.hdslb.com/bfs/face/e9f3eb205cfd1d47ed5cff17078d2d3fceb1e15e.jpg"
+        },
+        "stat": {
+         "aid": 116651546708711,
+         "view": 8363,
+         "danmaku": 1,
+         "reply": 42,
+         "fav": 451,
+         "coin": 92,
+         "share": 58,
+         "now_rank": 0,
+         "his_rank": 0,
+         "like": 151,
+         "dislike": 0,
+         "evaluation": "",
+         "argue_msg": "",
+         "vt": 0,
+         "vv": 8363
+        },
+        "dynamic": "",
+        "dimension": {
+         "width": 0,
+         "height": 0,
+         "rotate": 0
+        },
+        "desc_v2": null,
+        "is_chargeable_season": false,
+        "is_blooper": false,
+        "enable_vt": 0,
+        "vt_display": "",
+        "type_id_v2": 0,
+        "type_name_v2": "",
+        "is_lesson_video": 0
+       },
+       "page": {
+        "cid": 38672600482,
+        "page": 1,
+        "from": "vupload",
+        "part": "示例标题16：用于验证解析与索引行为",
+        "duration": 559,
+        "vid": "",
+        "weblink": "",
+        "dimension": {
+         "width": 2030,
+         "height": 1080,
+         "rotate": 0
+        }
+       },
+       "bvid": "BV1spnxpp4iy",
+       "pages": [
+        {
+         "cid": 38672600482,
+         "page": 1,
+         "from": "vupload",
+         "part": "示例标题16：用于验证解析与索引行为",
+         "duration": 559,
+         "vid": "",
+         "weblink": "",
+         "dimension": {
+          "width": 2030,
+          "height": 1080,
+          "rotate": 0
+         }
+        }
+       ]
+      },
+      {
+       "season_id": 7938307,
+       "section_id": 8819161,
+       "id": 199237324,
+       "aid": 116674262992786,
+       "cid": 38770770754,
+       "title": "示例标题15：用于验证解析与索引行为",
+       "attribute": 0,
+       "arc": {
+        "aid": 116674262992786,
+        "videos": 0,
+        "type_id": 0,
+        "type_name": "",
+        "copyright": 0,
+        "pic": "http://i2.hdslb.com/bfs/archive/e85efeed58540969137c8950bbd67109b7036413.jpg",
+        "title": "示例标题15：用于验证解析与索引行为",
+        "pubdate": 1780308200,
+        "ctime": 1780308200,
+        "desc": "",
+        "state": 0,
+        "duration": 299,
+        "rights": {
+         "bp": 0,
+         "elec": 0,
+         "download": 0,
+         "movie": 0,
+         "pay": 0,
+         "hd5": 0,
+         "no_reprint": 0,
+         "autoplay": 0,
+         "ugc_pay": 0,
+         "is_cooperation": 0,
+         "ugc_pay_preview": 0,
+         "arc_pay": 0,
+         "free_watch": 0
+        },
+        "author": {
+         "mid": 687837346,
+         "name": "示例UP主二",
+         "face": "https://i1.hdslb.com/bfs/face/e9f3eb205cfd1d47ed5cff17078d2d3fceb1e15e.jpg"
+        },
+        "stat": {
+         "aid": 116674262992786,
+         "view": 13855,
+         "danmaku": 1,
+         "reply": 35,
+         "fav": 1185,
+         "coin": 158,
+         "share": 183,
+         "now_rank": 0,
+         "his_rank": 0,
+         "like": 362,
+         "dislike": 0,
+         "evaluation": "",
+         "argue_msg": "",
+         "vt": 0,
+         "vv": 13855
+        },
+        "dynamic": "",
+        "dimension": {
+         "width": 0,
+         "height": 0,
+         "rotate": 0
+        },
+        "desc_v2": null,
+        "is_chargeable_season": false,
+        "is_blooper": false,
+        "enable_vt": 0,
+        "vt_display": "",
+        "type_id_v2": 0,
+        "type_name_v2": "",
+        "is_lesson_video": 0
+       },
+       "page": {
+        "cid": 38770770754,
+        "page": 1,
+        "from": "vupload",
+        "part": "示例标题15：用于验证解析与索引行为",
+        "duration": 299,
+        "vid": "",
+        "weblink": "",
+        "dimension": {
+         "width": 2030,
+         "height": 1080,
+         "rotate": 0
+        }
+       },
+       "bvid": "BV1wiybi2fpi",
+       "pages": [
+        {
+         "cid": 38770770754,
+         "page": 1,
+         "from": "vupload",
+         "part": "示例标题15：用于验证解析与索引行为",
+         "duration": 299,
+         "vid": "",
+         "weblink": "",
+         "dimension": {
+          "width": 2030,
+          "height": 1080,
+          "rotate": 0
+         }
+        }
+       ]
+      },
+      {
+       "season_id": 7938307,
+       "section_id": 8819161,
+       "id": 200714660,
+       "aid": 116713504902539,
+       "cid": 38953354732,
+       "title": "示例标题14：用于验证解析与索引行为",
+       "attribute": 0,
+       "arc": {
+        "aid": 116713504902539,
+        "videos": 0,
+        "type_id": 0,
+        "type_name": "",
+        "copyright": 0,
+        "pic": "http://i2.hdslb.com/bfs/archive/bb51352dd1a5b6d528993264149a1d1e43981bce.jpg",
+        "title": "示例标题14：用于验证解析与索引行为",
+        "pubdate": 1780912800,
+        "ctime": 1780912800,
+        "desc": "",
+        "state": 0,
+        "duration": 277,
+        "rights": {
+         "bp": 0,
+         "elec": 0,
+         "download": 0,
+         "movie": 0,
+         "pay": 0,
+         "hd5": 0,
+         "no_reprint": 0,
+         "autoplay": 0,
+         "ugc_pay": 0,
+         "is_cooperation": 0,
+         "ugc_pay_preview": 0,
+         "arc_pay": 0,
+         "free_watch": 0
+        },
+        "author": {
+         "mid": 687837346,
+         "name": "示例UP主二",
+         "face": "https://i1.hdslb.com/bfs/face/e9f3eb205cfd1d47ed5cff17078d2d3fceb1e15e.jpg"
+        },
+        "stat": {
+         "aid": 116713504902539,
+         "view": 17877,
+         "danmaku": 0,
+         "reply": 77,
+         "fav": 1286,
+         "coin": 165,
+         "share": 181,
+         "now_rank": 0,
+         "his_rank": 0,
+         "like": 374,
+         "dislike": 0,
+         "evaluation": "",
+         "argue_msg": "",
+         "vt": 0,
+         "vv": 17877
+        },
+        "dynamic": "",
+        "dimension": {
+         "width": 0,
+         "height": 0,
+         "rotate": 0
+        },
+        "desc_v2": null,
+        "is_chargeable_season": false,
+        "is_blooper": false,
+        "enable_vt": 0,
+        "vt_display": "",
+        "type_id_v2": 0,
+        "type_name_v2": "",
+        "is_lesson_video": 0
+       },
+       "page": {
+        "cid": 38953354732,
+        "page": 1,
+        "from": "vupload",
+        "part": "示例标题14：用于验证解析与索引行为",
+        "duration": 277,
+        "vid": "",
+        "weblink": "",
+        "dimension": {
+         "width": 2030,
+         "height": 1080,
+         "rotate": 0
+        }
+       },
+       "bvid": "BV1j8xmeh3cf",
+       "pages": [
+        {
+         "cid": 38953354732,
+         "page": 1,
+         "from": "vupload",
+         "part": "示例标题14：用于验证解析与索引行为",
+         "duration": 277,
+         "vid": "",
+         "weblink": "",
+         "dimension": {
+          "width": 2030,
+          "height": 1080,
+          "rotate": 0
+         }
+        }
+       ]
+      },
+      {
+       "season_id": 7938307,
+       "section_id": 8819161,
+       "id": 202176786,
+       "aid": 116752058943223,
+       "cid": 39127941848,
+       "title": "示例标题11：用于验证解析与索引行为",
+       "attribute": 0,
+       "arc": {
+        "aid": 116752058943223,
+        "videos": 0,
+        "type_id": 0,
+        "type_name": "",
+        "copyright": 0,
+        "pic": "http://i1.hdslb.com/bfs/archive/90d3880b2fffdb721c296cb029e8a5206ea736a0.jpg",
+        "title": "示例标题11：用于验证解析与索引行为",
+        "pubdate": 1781517600,
+        "ctime": 1781517600,
+        "desc": "",
+        "state": 0,
+        "duration": 283,
+        "rights": {
+         "bp": 0,
+         "elec": 0,
+         "download": 0,
+         "movie": 0,
+         "pay": 0,
+         "hd5": 0,
+         "no_reprint": 0,
+         "autoplay": 0,
+         "ugc_pay": 0,
+         "is_cooperation": 0,
+         "ugc_pay_preview": 0,
+         "arc_pay": 0,
+         "free_watch": 0
+        },
+        "author": {
+         "mid": 687837346,
+         "name": "示例UP主二",
+         "face": "https://i1.hdslb.com/bfs/face/e9f3eb205cfd1d47ed5cff17078d2d3fceb1e15e.jpg"
+        },
+        "stat": {
+         "aid": 116752058943223,
+         "view": 6665,
+         "danmaku": 0,
+         "reply": 27,
+         "fav": 266,
+         "coin": 46,
+         "share": 38,
+         "now_rank": 0,
+         "his_rank": 0,
+         "like": 89,
+         "dislike": 0,
+         "evaluation": "",
+         "argue_msg": "",
+         "vt": 0,
+         "vv": 6665
+        },
+        "dynamic": "",
+        "dimension": {
+         "width": 0,
+         "height": 0,
+         "rotate": 0
+        },
+        "desc_v2": null,
+        "is_chargeable_season": false,
+        "is_blooper": false,
+        "enable_vt": 0,
+        "vt_display": "",
+        "type_id_v2": 0,
+        "type_name_v2": "",
+        "is_lesson_video": 0
+       },
+       "page": {
+        "cid": 39127941848,
+        "page": 1,
+        "from": "vupload",
+        "part": "示例标题11：用于验证解析与索引行为",
+        "duration": 283,
+        "vid": "",
+        "weblink": "",
+        "dimension": {
+         "width": 2706,
+         "height": 1440,
+         "rotate": 0
+        }
+       },
+       "bvid": "BV189009dc6o",
+       "pages": [
+        {
+         "cid": 39127941848,
+         "page": 1,
+         "from": "vupload",
+         "part": "示例标题11：用于验证解析与索引行为",
+         "duration": 283,
+         "vid": "",
+         "weblink": "",
+         "dimension": {
+          "width": 2706,
+          "height": 1440,
+          "rotate": 0
+         }
+        }
+       ]
+      },
+      {
+       "season_id": 7938307,
+       "section_id": 8819161,
+       "id": 203689154,
+       "aid": 116791804169811,
+       "cid": 39304366308,
+       "title": "示例标题10：用于验证解析与索引行为",
+       "attribute": 0,
+       "arc": {
+        "aid": 116791804169811,
+        "videos": 0,
+        "type_id": 0,
+        "type_name": "",
+        "copyright": 0,
+        "pic": "http://i2.hdslb.com/bfs/archive/f548a18341caabff9b0041e288cf643c438267c4.jpg",
+        "title": "示例标题10：用于验证解析与索引行为",
+        "pubdate": 1782122400,
+        "ctime": 1782122400,
+        "desc": "",
+        "state": 0,
+        "duration": 228,
+        "rights": {
+         "bp": 0,
+         "elec": 0,
+         "download": 0,
+         "movie": 0,
+         "pay": 0,
+         "hd5": 0,
+         "no_reprint": 0,
+         "autoplay": 0,
+         "ugc_pay": 0,
+         "is_cooperation": 0,
+         "ugc_pay_preview": 0,
+         "arc_pay": 0,
+         "free_watch": 0
+        },
+        "author": {
+         "mid": 687837346,
+         "name": "示例UP主二",
+         "face": "https://i1.hdslb.com/bfs/face/e9f3eb205cfd1d47ed5cff17078d2d3fceb1e15e.jpg"
+        },
+        "stat": {
+         "aid": 116791804169811,
+         "view": 4008,
+         "danmaku": 1,
+         "reply": 14,
+         "fav": 258,
+         "coin": 33,
+         "share": 21,
+         "now_rank": 0,
+         "his_rank": 0,
+         "like": 87,
+         "dislike": 0,
+         "evaluation": "",
+         "argue_msg": "",
+         "vt": 0,
+         "vv": 4008
+        },
+        "dynamic": "",
+        "dimension": {
+         "width": 0,
+         "height": 0,
+         "rotate": 0
+        },
+        "desc_v2": null,
+        "is_chargeable_season": false,
+        "is_blooper": false,
+        "enable_vt": 0,
+        "vt_display": "",
+        "type_id_v2": 0,
+        "type_name_v2": "",
+        "is_lesson_video": 0
+       },
+       "page": {
+        "cid": 39304366308,
+        "page": 1,
+        "from": "vupload",
+        "part": "示例标题10：用于验证解析与索引行为",
+        "duration": 228,
+        "vid": "",
+        "weblink": "",
+        "dimension": {
+         "width": 2706,
+         "height": 1440,
+         "rotate": 0
+        }
+       },
+       "bvid": "BV15xc0lamdo",
+       "pages": [
+        {
+         "cid": 39304366308,
+         "page": 1,
+         "from": "vupload",
+         "part": "示例标题10：用于验证解析与索引行为",
+         "duration": 228,
+         "vid": "",
+         "weblink": "",
+         "dimension": {
+          "width": 2706,
+          "height": 1440,
+          "rotate": 0
+         }
+        }
+       ]
+      },
+      {
+       "season_id": 7938307,
+       "section_id": 8819161,
+       "id": 206220358,
+       "aid": 116855859644573,
+       "cid": 39620968956,
+       "title": "示例标题25：用于验证解析与索引行为",
+       "attribute": 0,
+       "arc": {
+        "aid": 116855859644573,
+        "videos": 0,
+        "type_id": 0,
+        "type_name": "",
+        "copyright": 0,
+        "pic": "http://i1.hdslb.com/bfs/archive/bbd61437e3a703e6a698ed3aeb6fb9809ea8d645.jpg",
+        "title": "示例标题25：用于验证解析与索引行为",
+        "pubdate": 1783079085,
+        "ctime": 1783079085,
+        "desc": "",
+        "state": 0,
+        "duration": 199,
+        "rights": {
+         "bp": 0,
+         "elec": 0,
+         "download": 0,
+         "movie": 0,
+         "pay": 0,
+         "hd5": 0,
+         "no_reprint": 0,
+         "autoplay": 0,
+         "ugc_pay": 0,
+         "is_cooperation": 0,
+         "ugc_pay_preview": 0,
+         "arc_pay": 0,
+         "free_watch": 0
+        },
+        "author": {
+         "mid": 687837346,
+         "name": "示例UP主二",
+         "face": "https://i1.hdslb.com/bfs/face/e9f3eb205cfd1d47ed5cff17078d2d3fceb1e15e.jpg"
+        },
+        "stat": {
+         "aid": 116855859644573,
+         "view": 2475,
+         "danmaku": 2,
+         "reply": 7,
+         "fav": 189,
+         "coin": 22,
+         "share": 21,
+         "now_rank": 0,
+         "his_rank": 0,
+         "like": 64,
+         "dislike": 0,
+         "evaluation": "",
+         "argue_msg": "",
+         "vt": 0,
+         "vv": 2475
+        },
+        "dynamic": "",
+        "dimension": {
+         "width": 0,
+         "height": 0,
+         "rotate": 0
+        },
+        "desc_v2": null,
+        "is_chargeable_season": false,
+        "is_blooper": false,
+        "enable_vt": 0,
+        "vt_display": "",
+        "type_id_v2": 0,
+        "type_name_v2": "",
+        "is_lesson_video": 0
+       },
+       "page": {
+        "cid": 39620968956,
+        "page": 1,
+        "from": "vupload",
+        "part": "示例标题25：用于验证解析与索引行为",
+        "duration": 199,
+        "vid": "",
+        "weblink": "",
+        "dimension": {
+         "width": 2560,
+         "height": 1440,
+         "rotate": 0
+        }
+       },
+       "bvid": "BV1bkz2gvaz6",
+       "pages": [
+        {
+         "cid": 39620968956,
+         "page": 1,
+         "from": "vupload",
+         "part": "示例标题25：用于验证解析与索引行为",
+         "duration": 199,
+         "vid": "",
+         "weblink": "",
+         "dimension": {
+          "width": 2560,
+          "height": 1440,
+          "rotate": 0
+         }
+        }
+       ]
+      },
+      {
+       "season_id": 7938307,
+       "section_id": 8819161,
+       "id": 206780222,
+       "aid": 116870690638195,
+       "cid": 39690174761,
+       "title": "示例标题13：用于验证解析与索引行为",
+       "attribute": 0,
+       "arc": {
+        "aid": 116870690638195,
+        "videos": 0,
+        "type_id": 0,
+        "type_name": "",
+        "copyright": 0,
+        "pic": "http://i2.hdslb.com/bfs/archive/197f6a695fd6e83ca1bc93f71740dafa1de0a7b1.jpg",
+        "title": "示例标题13：用于验证解析与索引行为",
+        "pubdate": 1783332000,
+        "ctime": 1783332000,
+        "desc": "",
+        "state": 0,
+        "duration": 225,
+        "rights": {
+         "bp": 0,
+         "elec": 0,
+         "download": 0,
+         "movie": 0,
+         "pay": 0,
+         "hd5": 0,
+         "no_reprint": 0,
+         "autoplay": 0,
+         "ugc_pay": 0,
+         "is_cooperation": 0,
+         "ugc_pay_preview": 0,
+         "arc_pay": 0,
+         "free_watch": 0
+        },
+        "author": {
+         "mid": 687837346,
+         "name": "示例UP主二",
+         "face": "https://i1.hdslb.com/bfs/face/e9f3eb205cfd1d47ed5cff17078d2d3fceb1e15e.jpg"
+        },
+        "stat": {
+         "aid": 116870690638195,
+         "view": 2346,
+         "danmaku": 0,
+         "reply": 7,
+         "fav": 153,
+         "coin": 19,
+         "share": 22,
+         "now_rank": 0,
+         "his_rank": 0,
+         "like": 41,
+         "dislike": 0,
+         "evaluation": "",
+         "argue_msg": "",
+         "vt": 0,
+         "vv": 2346
+        },
+        "dynamic": "",
+        "dimension": {
+         "width": 0,
+         "height": 0,
+         "rotate": 0
+        },
+        "desc_v2": null,
+        "is_chargeable_season": false,
+        "is_blooper": false,
+        "enable_vt": 0,
+        "vt_display": "",
+        "type_id_v2": 0,
+        "type_name_v2": "",
+        "is_lesson_video": 0
+       },
+       "page": {
+        "cid": 39690174761,
+        "page": 1,
+        "from": "vupload",
+        "part": "示例标题13：用于验证解析与索引行为",
+        "duration": 225,
+        "vid": "",
+        "weblink": "",
+        "dimension": {
+         "width": 2560,
+         "height": 1440,
+         "rotate": 0
+        }
+       },
+       "bvid": "BV1kwjf7vvjy",
+       "pages": [
+        {
+         "cid": 39690174761,
+         "page": 1,
+         "from": "vupload",
+         "part": "示例标题13：用于验证解析与索引行为",
+         "duration": 225,
+         "vid": "",
+         "weblink": "",
+         "dimension": {
+          "width": 2560,
+          "height": 1440,
+          "rotate": 0
+         }
+        }
+       ]
+      },
+      {
+       "season_id": 7938307,
+       "section_id": 8819161,
+       "id": 209163991,
+       "aid": 116929058573271,
+       "cid": 40004223068,
+       "title": "示例标题9：用于验证解析与索引行为",
+       "attribute": 0,
+       "arc": {
+        "aid": 116929058573271,
+        "videos": 0,
+        "type_id": 0,
+        "type_name": "",
+        "copyright": 0,
+        "pic": "http://i0.hdslb.com/bfs/archive/ac92c8fff928b25bbd918e2d33bcfa3947252f1b.jpg",
+        "title": "示例标题9：用于验证解析与索引行为",
+        "pubdate": 1784199600,
+        "ctime": 1784199600,
+        "desc": "",
+        "state": 0,
+        "duration": 290,
+        "rights": {
+         "bp": 0,
+         "elec": 0,
+         "download": 0,
+         "movie": 0,
+         "pay": 0,
+         "hd5": 0,
+         "no_reprint": 0,
+         "autoplay": 0,
+         "ugc_pay": 0,
+         "is_cooperation": 0,
+         "ugc_pay_preview": 0,
+         "arc_pay": 0,
+         "free_watch": 0
+        },
+        "author": {
+         "mid": 687837346,
+         "name": "示例UP主二",
+         "face": "https://i1.hdslb.com/bfs/face/e9f3eb205cfd1d47ed5cff17078d2d3fceb1e15e.jpg"
+        },
+        "stat": {
+         "aid": 116929058573271,
+         "view": 3183,
+         "danmaku": 1,
+         "reply": 5,
+         "fav": 170,
+         "coin": 17,
+         "share": 16,
+         "now_rank": 0,
+         "his_rank": 0,
+         "like": 55,
+         "dislike": 0,
+         "evaluation": "",
+         "argue_msg": "",
+         "vt": 0,
+         "vv": 3183
+        },
+        "dynamic": "",
+        "dimension": {
+         "width": 0,
+         "height": 0,
+         "rotate": 0
+        },
+        "desc_v2": null,
+        "is_chargeable_season": false,
+        "is_blooper": false,
+        "enable_vt": 0,
+        "vt_display": "",
+        "type_id_v2": 0,
+        "type_name_v2": "",
+        "is_lesson_video": 0
+       },
+       "page": {
+        "cid": 40004223068,
+        "page": 1,
+        "from": "vupload",
+        "part": "示例标题9：用于验证解析与索引行为",
+        "duration": 290,
+        "vid": "",
+        "weblink": "",
+        "dimension": {
+         "width": 1918,
+         "height": 1080,
+         "rotate": 0
+        }
+       },
+       "bvid": "BV1t6vyy5mcc",
+       "pages": [
+        {
+         "cid": 40004223068,
+         "page": 1,
+         "from": "vupload",
+         "part": "示例标题9：用于验证解析与索引行为",
+         "duration": 290,
+         "vid": "",
+         "weblink": "",
+         "dimension": {
+          "width": 1918,
+          "height": 1080,
+          "rotate": 0
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "stat": {
+    "season_id": 7938307,
+    "view": 74374,
+    "danmaku": 13,
+    "reply": 281,
+    "fav": 4736,
+    "coin": 702,
+    "share": 647,
+    "now_rank": 0,
+    "his_rank": 0,
+    "like": 1554,
+    "vt": 0,
+    "vv": 0
+   },
+   "ep_count": 11,
+   "season_type": 1,
+   "is_pay_season": false,
+   "enable_vt": 0
+  },
+  "is_season_display": true,
+  "user_garb": {
+   "url_image_ani_cut": ""
+  },
+  "honor_reply": {},
+  "like_icon": "",
+  "need_jump_bv": false,
+  "disable_show_up_info": false,
+  "is_story_play": 1,
+  "is_view_self": false
+ }
+}

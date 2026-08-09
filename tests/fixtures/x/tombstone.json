@@ -1,0 +1,36 @@
+{
+ "content": {
+  "__typename": "TimelineTimelineItem",
+  "entryType": "TimelineTimelineItem",
+  "itemContent": {
+   "__typename": "TimelineTweet",
+   "itemType": "TimelineTweet",
+   "tweetDisplayType": "Tweet",
+   "tweet_results": {
+    "result": {
+     "__typename": "TweetTombstone",
+     "tombstone": {
+      "__typename": "TextTombstone",
+      "text": {
+       "entities": [
+        {
+         "fromIndex": 112,
+         "ref": {
+          "type": "TimelineUrl",
+          "url": "https://help.x.com/rules-and-policies/post-withheld-by-country",
+          "urlType": "ExternalUrl"
+         },
+         "toIndex": 122
+        }
+       ],
+       "rtl": false,
+       "text": "This Post from @example_seven has been withheld in all countries (copyright reasons) in response to a legal demand. Learn more"
+      }
+     }
+    }
+   }
+  }
+ },
+ "entryId": "tweet-1141755651528528315",
+ "sortIndex": "1116059051663416448"
+}

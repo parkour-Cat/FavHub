@@ -1,0 +1,172 @@
+{
+ "font_size": 0.4,
+ "font_color": "#FFFFFF",
+ "background_alpha": 0.5,
+ "background_color": "#9C27B0",
+ "Stroke": "none",
+ "type": "AIsubtitle",
+ "lang": "zh",
+ "version": "v1.7.0.4",
+ "body": [
+  {
+   "from": 0.04,
+   "to": 1.74,
+   "sid": 1,
+   "location": 2,
+   "content": "示例内容2，用于验",
+   "music": 0
+  },
+  {
+   "from": 1.74,
+   "to": 2.68,
+   "sid": 2,
+   "location": 2,
+   "content": "示例内容3",
+   "music": 0
+  },
+  {
+   "from": 2.68,
+   "to": 3.48,
+   "sid": 3,
+   "location": 2,
+   "content": "示例内容4",
+   "music": 0
+  },
+  {
+   "from": 3.48,
+   "to": 4.42,
+   "sid": 4,
+   "location": 2,
+   "content": "示例内容5，",
+   "music": 0
+  },
+  {
+   "from": 4.42,
+   "to": 6.279,
+   "sid": 5,
+   "location": 2,
+   "content": "示例内容6，用于验证",
+   "music": 0
+  },
+  {
+   "from": 6.279,
+   "to": 9.139,
+   "sid": 6,
+   "location": 2,
+   "content": "示例内容7，用于验证解析与索引行为",
+   "music": 0
+  },
+  {
+   "from": 9.139,
+   "to": 11.039,
+   "sid": 7,
+   "location": 2,
+   "content": "示例内容8，用于验证解析与",
+   "music": 0
+  },
+  {
+   "from": 11.039,
+   "to": 13.359,
+   "sid": 8,
+   "location": 2,
+   "content": "示例内容9，用于验证解析与索",
+   "music": 0
+  },
+  {
+   "from": 13.359,
+   "to": 14.7,
+   "sid": 9,
+   "location": 2,
+   "content": "示例内容10",
+   "music": 0
+  },
+  {
+   "from": 14.7,
+   "to": 17.11,
+   "sid": 10,
+   "location": 2,
+   "content": "示例内容11，用于验证解析与",
+   "music": 0
+  },
+  {
+   "from": 17.11,
+   "to": 18.93,
+   "sid": 11,
+   "location": 2,
+   "content": "示例内容12，用于验证",
+   "music": 0
+  },
+  {
+   "from": 18.93,
+   "to": 21.13,
+   "sid": 12,
+   "location": 2,
+   "content": "示例内容13，用于验证解析",
+   "music": 0
+  },
+  {
+   "from": 21.13,
+   "to": 22.25,
+   "sid": 13,
+   "location": 2,
+   "content": "示例内容14，",
+   "music": 0
+  },
+  {
+   "from": 22.25,
+   "to": 23.13,
+   "sid": 14,
+   "location": 2,
+   "content": "示例内容15",
+   "music": 0
+  },
+  {
+   "from": 23.13,
+   "to": 25.22,
+   "sid": 15,
+   "location": 2,
+   "content": "示例内容16，用于验证解",
+   "music": 0
+  },
+  {
+   "from": 25.22,
+   "to": 26.54,
+   "sid": 16,
+   "location": 2,
+   "content": "示例内容17",
+   "music": 0
+  },
+  {
+   "from": 26.54,
+   "to": 28.7,
+   "sid": 17,
+   "location": 2,
+   "content": "示例内容18，用于验证解析",
+   "music": 0
+  },
+  {
+   "from": 28.7,
+   "to": 29.84,
+   "sid": 18,
+   "location": 2,
+   "content": "示例内容19，",
+   "music": 0
+  },
+  {
+   "from": 29.84,
+   "to": 31.04,
+   "sid": 19,
+   "location": 2,
+   "content": "示例内容20",
+   "music": 0
+  },
+  {
+   "from": 31.04,
+   "to": 33.56,
+   "sid": 20,
+   "location": 2,
+   "content": "示例内容21，用于验证解析与索引行",
+   "music": 0
+  }
+ ]
+}

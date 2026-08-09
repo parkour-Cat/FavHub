@@ -1,0 +1,14 @@
+[
+  {
+    "platform": "x",
+    "source_id": "fixture-1",
+    "canonical_url": "https://x.com/example/status/fixture-1",
+    "title": "Fixture post",
+    "author": "example",
+    "published_at": "2026-07-18T12:00:00Z",
+    "observed_at": "2026-07-18T12:05:00Z",
+    "body": "A captured fixture item.",
+    "collections": ["inbox"],
+    "extractor_version": "fixture-v1"
+  }
+]

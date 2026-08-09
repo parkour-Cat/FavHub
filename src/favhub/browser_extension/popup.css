@@ -1,0 +1,83 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 14px;
+  width: 260px;
+  font-size: 13px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 15px;
+}
+
+.state {
+  margin: 0 0 10px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.detail {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2px 10px;
+  margin: 0 0 10px;
+}
+
+.detail dt {
+  opacity: 0.7;
+}
+
+.detail dd {
+  margin: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.error {
+  margin: 0 0 10px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  background: rgba(200, 40, 40, 0.12);
+}
+
+/* Deliberately quieter than .error: this is the way out, not another alarm. */
+.hint {
+  margin: -4px 0 10px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  background: rgba(120, 120, 120, 0.12);
+  line-height: 1.4;
+}
+
+.hint code {
+  font-family: ui-monospace, Consolas, monospace;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  flex: 1;
+  padding: 6px 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.note {
+  margin: 10px 0 0;
+  font-size: 11px;
+  opacity: 0.7;
+  line-height: 1.4;
+}

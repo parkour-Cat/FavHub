@@ -1,0 +1,22 @@
+[
+  {"query":"How can I keep agent knowledge offline?","expected_source":"local-knowledge","embedding_axis":0,"paraphrase":true},
+  {"query":"怎样让智能体离线使用收藏？","expected_source":"local-knowledge","embedding_axis":0,"paraphrase":true},
+  {"query":"Python retry with exponential delay","expected_source":"retry-code","embedding_axis":1,"paraphrase":false},
+  {"query":"网络失败后逐渐延长等待时间","expected_source":"retry-code","embedding_axis":1,"paraphrase":true},
+  {"query":"Find a multilingual embedding model","expected_source":"embedding-model","embedding_axis":2,"paraphrase":false},
+  {"query":"支持中英文语义表示的轻量模型","expected_source":"embedding-model","embedding_axis":2,"paraphrase":true},
+  {"query":"Video transcript about database indexing","expected_source":"subtitle-index","embedding_axis":3,"paraphrase":true},
+  {"query":"字幕里讲了怎样构建搜索索引","expected_source":"subtitle-index","embedding_axis":3,"paraphrase":true},
+  {"query":"Extract a recipe from screenshots","expected_source":"ocr-recipe","embedding_axis":4,"paraphrase":true},
+  {"query":"图片中的配方步骤是什么","expected_source":"ocr-recipe","embedding_axis":4,"paraphrase":false},
+  {"query":"Rank lexical and vector results together","expected_source":"rrf-ranking","embedding_axis":5,"paraphrase":false},
+  {"query":"如何融合关键词召回和语义召回","expected_source":"rrf-ranking","embedding_axis":5,"paraphrase":true},
+  {"query":"Store normalized vectors in SQLite","expected_source":"sqlite-vectors","embedding_axis":6,"paraphrase":false},
+  {"query":"不用向量数据库保存嵌入数据","expected_source":"sqlite-vectors","embedding_axis":6,"paraphrase":true},
+  {"query":"Keep stable source citations","expected_source":"citations","embedding_axis":7,"paraphrase":false},
+  {"query":"回答时怎样追溯到原收藏","expected_source":"citations","embedding_axis":7,"paraphrase":true},
+  {"query":"Recover interrupted enrichment jobs","expected_source":"durable-queue","embedding_axis":8,"paraphrase":true},
+  {"query":"进程退出后继续处理未完成任务","expected_source":"durable-queue","embedding_axis":8,"paraphrase":true},
+  {"query":"Search only posts published this year","expected_source":"metadata-filter","embedding_axis":9,"paraphrase":false},
+  {"query":"限定平台和发布时间查收藏","expected_source":"metadata-filter","embedding_axis":9,"paraphrase":true}
+]

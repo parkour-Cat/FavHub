@@ -1,0 +1,230 @@
+{
+ "code": 0,
+ "message": "OK",
+ "ttl": 1,
+ "data": {
+  "info": {
+   "id": 108963847,
+   "fid": 1089638,
+   "mid": 90000001,
+   "attr": 0,
+   "title": "默认收藏夹",
+   "cover": "http://i1.hdslb.com/bfs/archive/9d6fb0441b86a34301339176ce431561d42ebaba.jpg",
+   "upper": {
+    "mid": 90000001,
+    "name": "示例用户",
+    "face": "https://i0.hdslb.com/bfs/face/example.jpg",
+    "followed": false,
+    "vip_type": 1,
+    "vip_statue": 0
+   },
+   "cover_type": 2,
+   "cnt_info": {
+    "collect": 0,
+    "play": 1,
+    "thumb_up": 0,
+    "share": 0
+   },
+   "type": 11,
+   "intro": "",
+   "ctime": 1489131085,
+   "mtime": 1555401114,
+   "state": 0,
+   "fav_state": 0,
+   "like_state": 0,
+   "media_count": 597,
+   "is_top": false,
+   "is_kid_playlist": false,
+   "kid_playlist_desc": ""
+  },
+  "medias": [
+   {
+    "id": 116763299742011,
+    "type": 2,
+    "title": "示例标题17：用于验证解析与索引行为",
+    "cover": "http://i1.hdslb.com/bfs/archive/9d6fb0441b86a34301339176ce431561d42ebaba.jpg",
+    "intro": "",
+    "page": 1,
+    "duration": 222,
+    "upper": {
+     "mid": 1209322450454535,
+     "name": "示例UP主四",
+     "face": "https://i1.hdslb.com/bfs/face/ec3971beb523f30a9126c5e05e81cc6d19d1386b.jpg",
+     "jump_link": ""
+    },
+    "attr": 0,
+    "cnt_info": {
+     "collect": 855,
+     "play": 7389,
+     "danmaku": 1,
+     "vt": 0,
+     "play_switch": 0,
+     "reply": 0,
+     "view_text_1": "7389"
+    },
+    "link": "bilibili://video/176495893269964",
+    "ctime": 1781666633,
+    "pubtime": 1781695620,
+    "fav_time": 1784957583,
+    "bv_id": "BV11dzv1qkfv",
+    "bvid": "BV11dzv1qkfv",
+    "season": null,
+    "ogv": null,
+    "ugc": {
+     "first_cid": 39176964266
+    },
+    "media_list_link": "bilibili://music/playlist/playpage/317493535?page_type=3&oid=176495893269964&otype=2"
+   },
+   {
+    "id": 116855859644573,
+    "type": 2,
+    "title": "示例标题25：用于验证解析与索引行为",
+    "cover": "http://i1.hdslb.com/bfs/archive/bbd61437e3a703e6a698ed3aeb6fb9809ea8d645.jpg",
+    "intro": "示例简介2",
+    "page": 1,
+    "duration": 199,
+    "upper": {
+     "mid": 687837346,
+     "name": "示例UP主二",
+     "face": "https://i1.hdslb.com/bfs/face/e9f3eb205cfd1d47ed5cff17078d2d3fceb1e15e.jpg",
+     "jump_link": ""
+    },
+    "attr": 0,
+    "cnt_info": {
+     "collect": 189,
+     "play": 2475,
+     "danmaku": 2,
+     "vt": 0,
+     "play_switch": 0,
+     "reply": 0,
+     "view_text_1": "2475"
+    },
+    "link": "bilibili://video/075957772208256",
+    "ctime": 1783079085,
+    "pubtime": 1783079085,
+    "fav_time": 1784912099,
+    "bv_id": "BV1bkz2gvaz6",
+    "bvid": "BV1bkz2gvaz6",
+    "season": null,
+    "ogv": null,
+    "ugc": {
+     "first_cid": 39620968956
+    },
+    "media_list_link": "bilibili://music/playlist/playpage/317493535?page_type=3&oid=075957772208256&otype=2"
+   },
+   {
+    "id": 116809369913691,
+    "type": 2,
+    "title": "示例标题21：用于验证解析与索引行为",
+    "cover": "http://i1.hdslb.com/bfs/archive/7be2231144a00af6896f7b20899ad90452ed76ff.jpg",
+    "intro": "",
+    "page": 1,
+    "duration": 346,
+    "upper": {
+     "mid": 1209322450454535,
+     "name": "示例UP主四",
+     "face": "https://i1.hdslb.com/bfs/face/ec3971beb523f30a9126c5e05e81cc6d19d1386b.jpg",
+     "jump_link": ""
+    },
+    "attr": 0,
+    "cnt_info": {
+     "collect": 597,
+     "play": 4651,
+     "danmaku": 0,
+     "vt": 0,
+     "play_switch": 0,
+     "reply": 0,
+     "view_text_1": "4651"
+    },
+    "link": "bilibili://video/457003004540359",
+    "ctime": 1782369650,
+    "pubtime": 1782391320,
+    "fav_time": 1784906783,
+    "bv_id": "BV1qvughybhv",
+    "bvid": "BV1qvughybhv",
+    "season": null,
+    "ogv": null,
+    "ugc": {
+     "first_cid": 39391006672
+    },
+    "media_list_link": "bilibili://music/playlist/playpage/317493535?page_type=3&oid=457003004540359&otype=2"
+   },
+   {
+    "id": 116974357061133,
+    "type": 2,
+    "title": "示例标题8：用于验证解析与索引行为",
+    "cover": "http://i2.hdslb.com/bfs/archive/1d6fbf381a2add78cabf53a1146a99bac50e96c4.jpg",
+    "intro": "这是第1段示例正文，用于验证解析与分块行为。这是第1段示例正文，用于验证解析与分块行为。这是第1段示例正文，用于验证解析与分块行为。这是第1段示例正文，用于验证解析与分块行为。这是第1段示例正文，用于验证解析与分块行为。这是第1段示例正文，用于验证解析与分块行为。这是第1段示例正文，用于验证解析与分块行为。这是第1段示例正文，用于验证解析与分块行为。这是第1段示例正文，用于验证解析与分块行为。这是第1段示例正文，用于验证解析与分块行为。这是第1段示例正文，用于验证解析与分块行为。这是第1段示例正文，用于验",
+    "page": 1,
+    "duration": 207,
+    "upper": {
+     "mid": 1083019730250823,
+     "name": "示例UP主一",
+     "face": "https://i2.hdslb.com/bfs/face/6fb88ae1ff883bc8695ef47a6da6f28b96a12f8c.jpg",
+     "jump_link": ""
+    },
+    "attr": 0,
+    "cnt_info": {
+     "collect": 371,
+     "play": 2683,
+     "danmaku": 0,
+     "vt": 0,
+     "play_switch": 0,
+     "reply": 0,
+     "view_text_1": "2683"
+    },
+    "link": "bilibili://video/397518279073751",
+    "ctime": 1784887231,
+    "pubtime": 1784887231,
+    "fav_time": 1784905733,
+    "bv_id": "BV1aluwgpp23",
+    "bvid": "BV1aluwgpp23",
+    "season": null,
+    "ogv": null,
+    "ugc": {
+     "first_cid": 40254637787
+    },
+    "media_list_link": "bilibili://music/playlist/playpage/317493535?page_type=3&oid=397518279073751&otype=2"
+   },
+   {
+    "id": 116969223227071,
+    "type": 2,
+    "title": "示例标题2：用于验证解析与索引行为",
+    "cover": "http://i0.hdslb.com/bfs/archive/3f2506d17dbf7d1f616a6e041c7312b540deb7e1.jpg",
+    "intro": "这是第1段示例正文，用于验证解析与分块行为。这是第1段示例正文，用于验证解析与分块行为。这是第1段示例正文，用于验证解析与分块行为。这是第1段示例正文，用于验证解析与分块行为。这是第1段示例正文，用于验证解析与分块行为。这是第1段示例正文，用于验证解析与分块行为。这是第1段示例正文，用于验证解析与分块行为。这是第1段示例正文，用于验",
+    "page": 1,
+    "duration": 99,
+    "upper": {
+     "mid": 1245432014376025,
+     "name": "示例UP主三",
+     "face": "https://i1.hdslb.com/bfs/face/421ecc27163d873f55671328b52c802e6511db3d.jpg",
+     "jump_link": ""
+    },
+    "attr": 0,
+    "cnt_info": {
+     "collect": 27,
+     "play": 852,
+     "danmaku": 1,
+     "vt": 0,
+     "play_switch": 0,
+     "reply": 0,
+     "view_text_1": "852"
+    },
+    "link": "bilibili://video/288098539175390",
+    "ctime": 1784808911,
+    "pubtime": 1784808910,
+    "fav_time": 1784860991,
+    "bv_id": "BV1ha97wj5am",
+    "bvid": "BV1ha97wj5am",
+    "season": null,
+    "ogv": null,
+    "ugc": {
+     "first_cid": 40228096330
+    },
+    "media_list_link": "bilibili://music/playlist/playpage/317493535?page_type=3&oid=288098539175390&otype=2"
+   }
+  ],
+  "has_more": true,
+  "ttl": 1785054191
+ }
+}

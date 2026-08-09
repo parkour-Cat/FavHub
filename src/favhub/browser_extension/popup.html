@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="popup.css" />
+    <title>FavHub Collector</title>
+  </head>
+  <body>
+    <h1>FavHub</h1>
+    <p id="state" class="state">inactive</p>
+    <dl class="detail">
+      <dt>Platform</dt>
+      <dd id="platform">—</dd>
+      <dt>Scanned</dt>
+      <dd id="scanned">0</dd>
+      <dt>Submitted</dt>
+      <dd id="submitted">0</dd>
+      <dt>Awaiting receipt</dt>
+      <dd id="pending">0</dd>
+    </dl>
+    <p id="error" class="error" hidden></p>
+    <p id="hint" class="hint" hidden></p>
+    <div class="actions">
+      <button id="pause" type="button">Pause</button>
+      <button id="cancel" type="button">Cancel</button>
+    </div>
+    <p class="note">
+      FavHub only collects while a sync you started is running. It never reads
+      cookies, tokens, or request headers.
+    </p>
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>

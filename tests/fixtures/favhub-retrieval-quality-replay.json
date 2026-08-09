@@ -1,0 +1,7 @@
+[
+  {"id":"exact-title-remains-findable","query_class":"exact_title","candidates":[{"source_id":"title","score":0.030,"evidence":"title_only"}],"expected_order":["title"]},
+  {"id":"body-beats-title-on-broad-topic","query_class":"broad_topic","candidates":[{"source_id":"title","score":0.030,"evidence":"title_only"},{"source_id":"body","score":0.025,"evidence":"body"}],"expected_order":["body","title"]},
+  {"id":"transcript-beats-title-on-practical-query","query_class":"practical","candidates":[{"source_id":"title","score":0.028,"evidence":"title_only"},{"source_id":"transcript","score":0.023,"evidence":"transcript"}],"expected_order":["transcript","title"]},
+  {"id":"mixed-and-ocr-keep-full-prior","query_class":"broad_topic","candidates":[{"source_id":"mixed","score":0.024,"evidence":"mixed"},{"source_id":"ocr","score":0.023,"evidence":"ocr"},{"source_id":"body","score":0.024,"evidence":"body"}],"expected_order":["mixed","ocr","body"]},
+  {"id":"duplicate-chunks-do-not-consume-item-limit","query_class":"multi_chunk","candidates":[{"source_id":"same","ordinal":0,"score":0.030,"evidence":"body"},{"source_id":"same","ordinal":1,"score":0.029,"evidence":"body"},{"source_id":"other","ordinal":0,"score":0.020,"evidence":"body"}],"expected_order":["same","other"]}
+]

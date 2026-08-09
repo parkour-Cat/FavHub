@@ -1,0 +1,33 @@
+{
+ "code": 0,
+ "message": "OK",
+ "ttl": 1,
+ "data": {
+  "count": 2,
+  "list": [
+   {
+    "id": 108963847,
+    "fid": 1089638,
+    "mid": 90000001,
+    "attr": 0,
+    "title": "默认收藏夹",
+    "fav_state": 0,
+    "media_count": 597,
+    "is_kid_playlist": false,
+    "kid_playlist_desc": ""
+   },
+   {
+    "id": 2225813947,
+    "fid": 22258139,
+    "mid": 90000001,
+    "attr": 22,
+    "title": "Example 1",
+    "fav_state": 0,
+    "media_count": 38,
+    "is_kid_playlist": false,
+    "kid_playlist_desc": ""
+   }
+  ],
+  "season": null
+ }
+}

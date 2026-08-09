@@ -1,0 +1,122 @@
+[
+  {
+    "id": "find-ai-video",
+    "category": "find",
+    "question": "我收藏过哪些讲解这个主题的长视频？",
+    "requires_synthesis": true
+  },
+  {
+    "id": "find-agent-memory",
+    "category": "find",
+    "question": "找出我存过的关于该工具的实践记录。",
+    "requires_synthesis": true
+  },
+  {
+    "id": "find-content-business",
+    "category": "find",
+    "question": "我保存过哪些与这个概念相关的英文资料？",
+    "requires_synthesis": true
+  },
+  {
+    "id": "find-hybrid-search",
+    "category": "find",
+    "question": "找出收藏里成体系介绍某个框架的内容。",
+    "requires_synthesis": true
+  },
+  {
+    "id": "summarize-ai-workflows",
+    "category": "summarize",
+    "question": "总结我收藏中关于这个方向的主要观点。",
+    "requires_synthesis": true
+  },
+  {
+    "id": "summarize-account-positioning",
+    "category": "summarize",
+    "question": "概括这几条收藏共同强调的做法。",
+    "requires_synthesis": true
+  },
+  {
+    "id": "summarize-local-ai",
+    "category": "summarize",
+    "question": "把我存过的相关教程整理成一个步骤清单。",
+    "requires_synthesis": true
+  },
+  {
+    "id": "summarize-agent-tools",
+    "category": "summarize",
+    "question": "总结收藏里对该方案优缺点的评价。",
+    "requires_synthesis": true
+  },
+  {
+    "id": "recommend-ai-video-start",
+    "category": "recommend",
+    "question": "从我的收藏里挑出最值得先看的三条。",
+    "requires_synthesis": true
+  },
+  {
+    "id": "recommend-agent-project",
+    "category": "recommend",
+    "question": "推荐收藏中适合入门这个主题的材料。",
+    "requires_synthesis": true
+  },
+  {
+    "id": "recommend-learning-order",
+    "category": "recommend",
+    "question": "哪几条收藏最适合用来向别人解释这个概念？",
+    "requires_synthesis": true
+  },
+  {
+    "id": "recommend-content-niche",
+    "category": "recommend",
+    "question": "收藏里有没有更新更完整的替代资料？",
+    "requires_synthesis": true
+  },
+  {
+    "id": "compare-manual-n8n",
+    "category": "compare",
+    "question": "我收藏的两种方案在取舍上有什么不同？",
+    "requires_synthesis": true
+  },
+  {
+    "id": "compare-fts-hybrid",
+    "category": "compare",
+    "question": "对比收藏里对同一问题的不同结论。",
+    "requires_synthesis": true
+  },
+  {
+    "id": "compare-platform-content",
+    "category": "compare",
+    "question": "这些资料在实现路径上的分歧在哪里？",
+    "requires_synthesis": true
+  },
+  {
+    "id": "compare-mcp-cli",
+    "category": "compare",
+    "question": "收藏中哪一种做法的适用条件更严格？",
+    "requires_synthesis": true
+  },
+  {
+    "id": "plan-first-ai-video",
+    "category": "plan",
+    "question": "根据我的收藏，规划一条学习这个主题的路径。",
+    "requires_synthesis": true
+  },
+  {
+    "id": "plan-agent-interview",
+    "category": "plan",
+    "question": "把收藏里的建议整理成一份可执行的计划。",
+    "requires_synthesis": true
+  },
+  {
+    "id": "plan-knowledge-workflow",
+    "category": "plan",
+    "question": "依据这些资料，第一步应该先做什么？",
+    "requires_synthesis": true
+  },
+  {
+    "id": "plan-content-validation",
+    "category": "plan",
+    "question": "结合收藏内容，列出落地时要先验证的问题。",
+    "requires_synthesis": true
+  }
+]

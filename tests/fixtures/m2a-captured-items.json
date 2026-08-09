@@ -1,0 +1,26 @@
+[
+  {
+    "platform": "x",
+    "source_id": "m2a-x-1",
+    "canonical_url": "https://x.com/example/status/m2a-x-1",
+    "title": "Durable citation workflow",
+    "author": "example",
+    "published_at": "2026-07-18T12:00:00Z",
+    "observed_at": "2026-07-18T12:05:00Z",
+    "body": "A captured research note about durable local retrieval, canonical citation identity, and how to rebuild bookmarks offline.\n\n```python\ndef rebuild_bookmarks(bookmarks):\n    return sorted(set(bookmarks))  # deduplicate\n```",
+    "collections": ["inbox", "research"],
+    "extractor_version": "m2a-fixture-v1"
+  },
+  {
+    "platform": "bilibili",
+    "source_id": "BV1M2AFixture",
+    "canonical_url": "https://www.bilibili.com/video/BV1M2AFixture",
+    "title": "知识库 本地检索 收藏整理",
+    "author": "示例作者",
+    "published_at": "2026-07-17T08:00:00Z",
+    "observed_at": "2026-07-17T08:05:00Z",
+    "body": "知识库 本地检索 收藏整理 使用固定内容验证关键词命中。",
+    "collections": ["收藏整理"],
+    "extractor_version": "m2a-fixture-v1"
+  }
+]
